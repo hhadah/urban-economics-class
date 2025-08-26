@@ -23,7 +23,7 @@ span_col <- function(text, color) {
 
 ## Categories of color palettes
 
-When choosing colors, you need to make sure you work with a palette that mathches the nature of your data. There are three broad categories of color-able data: sequential, diverging, and qualitative.
+When choosing colors, you need to make sure you work with a palette that matches the nature of your data. There are three broad categories of color-able data: sequential, diverging, and qualitative.
 
 Here's are three plots I'll use throughout this page to illustrate their differences (and show off different colors). The code is hidden to save space—you can show the code and copy/paste it if you want to follow along:
 
