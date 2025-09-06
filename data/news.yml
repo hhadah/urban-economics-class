@@ -1,5 +1,60 @@
 # This file is generated with data/extract-news-headings.R; do not edit by hand
 
+- title: "Copy, paste, and tweak"
+  categories:
+  - "advice"
+  date_actual: '1757174280'
+  date: "2025-09-06T15:58:00"
+  href: "/news/2025-09-06_copy-paste-tweak.html"
+  headings: []
+- title: "Making cleaner, nicer Quarto documents"
+  categories:
+  - "advice"
+  date_actual: '1757170680'
+  date: "2025-09-06T14:58:00"
+  href: "/news/2025-09-06_cleaner-nicer-qmd-output.html"
+  headings:
+  - id: "render-often"
+    text: "Render often"
+  - id: "check-for-broken-code-chunks"
+    text: "Check for broken code chunks"
+  - id: "check-that-your-text-looks-okay"
+    text: "Check that your text looks okay"
+  - id: "dont-install-packages-in-your-document"
+    text: "Don’t install packages in your document"
+  - id: "clean-up-warnings-and-messages"
+    text: "Clean up warnings and messages"
+  - id: "global-chunk-options"
+    text: "Global chunk options"
+  - id: "fancy-document-settings"
+    text: "Fancy document settings"
+  - id: "chunk-names"
+    text: "Chunk names"
+- title: "Session 1 tips and FAQs"
+  categories:
+  - "FAQs"
+  date_actual: '1757167200'
+  date: "2025-09-06T14:00:00"
+  href: "/news/2025-09-06_faqs_week-01.html"
+  headings:
+  - id: "whats-the-difference-between-source-and-visual-mode-in-the-editor-window"
+    text: "What’s the difference between Source and Visual mode in the editor window?"
+  - id: "whats-the-difference-between-r-markdown-and-quarto"
+    text: "What’s the difference between R Markdown and Quarto?"
+  - id: "why-dont-i-have-options-to-render-to-pdf-or-word-or-html"
+    text: "Why don’t I have options to render to PDF (or Word or HTML)?"
+  - id: "rendered-document-format-for-icollege"
+    text: "Rendered document format for iCollege"
+  - id: "what-is-this-typst-thing-that-we-can-render-to"
+    text: "What is this  thing that we can render to?"
+  - id: "how-does-group_by-work-why-did-we-have-to-group-by-island-and-not-body_mass-and-island"
+    text: "How does <code>group_by()</code> work? Why did we have to group by <code>island</code>
+      and not <code>body_mass</code> and <code>island</code>?"
+  - id: "how-do-we-know-which-type-of-graph-to-use-for-different-types-of-data"
+    text: "How do we know which type of graph to use for different types of data?"
+  - id: "do-you-have-any-tips-for-remembering-all-the-different-functions-were-learning-there-are-so-many"
+    text: "Do you have any tips for remembering all the different functions we’re
+      learning? There are so many!"
 - title: "How to ask for help"
   categories:
   - "advice"
