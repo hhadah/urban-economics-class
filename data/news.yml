@@ -1,5 +1,39 @@
 # This file is generated with data/extract-news-headings.R; do not edit by hand
 
+- title: "Week 2 FAQs"
+  categories:
+  - "FAQs"
+  date_actual: '1757415780'
+  date: "2025-09-09T11:03:00"
+  href: "/news/2025-09-09_faqs_session-02.html"
+  headings:
+  - id: "why-do-you-use-s-for-grades"
+    text: "Why do you use ✓s for grades?"
+  - id: "why-does-mean-both-headings-and-code-comments"
+    text: "Why does <code>#</code> mean both headings and code comments?"
+  - id: "i-will-never-do-anything-with-graphic-designwhy-did-we-have-to-learn-these-principles"
+    text: "I will never do anything with graphic design—why did we have to learn these
+      principles?"
+  - id: "how-does-crap-relate-to-other-things-like-the-gestalt-principles"
+    text: "How does CRAP relate to other things like the Gestalt Principles?"
+  - id: "does-something-need-to-have-all-four-elements-to-be-well-designed-or-can-it-have-contrast-and-not-alignment"
+    text: "Does something need to have all four elements to be well designed? Or can
+      it have contrast and not alignment?"
+  - id: "are-the-crap-principles-hard-and-fast-rules-will-following-crap-lead-to-the-same-final-designs"
+    text: "Are the CRAP principles hard-and-fast rules? Will following CRAP lead to
+      the same final designs?"
+  - id: "does-crap-only-work-for-single-page-things-like-graphs-and-posters-or-does-it-work-for-reports-and-books"
+    text: "Does CRAP only work for single-page things like graphs and posters? Or
+      does it work for reports and books?"
+  - id: "i-noticed-illustrator-isnt-free-for-gsu-students-anymore.-are-there-other-graphics-editors"
+    text: "I noticed Illustrator isn’t free for GSU students anymore. Are there other
+      graphics editors?"
+  - id: "is-there-a-way-to-check-that-my-color-palettes-are-accessible-if-im-not-using-a-premade-one"
+    text: "Is there a way to check that my color palettes are accessible if I’m not
+      using a premade one?"
+  - id: "i-wanted-to-try-other-fonts-but-i-can-only-see-a-few-in-microsoft-word-where-can-i-find-fonts-to-use"
+    text: "I wanted to try other fonts, but I can only see a few in Microsoft Word?
+      Where can I find fonts to use?"
 - title: "Copy, paste, and tweak"
   categories:
   - "advice"
@@ -30,7 +64,7 @@
     text: "Fancy document settings"
   - id: "chunk-names"
     text: "Chunk names"
-- title: "Session 1 tips and FAQs"
+- title: "Week 1 tips and FAQs"
   categories:
   - "FAQs"
   date_actual: '1757167200'
