@@ -44,7 +44,7 @@ I have a few strategies for encouraging judgment-free curiosity in this class:
 
 ### Why does `#` mean both headings and code comments?
 
-This is a tricky quirk of using Quarto. In Markdown, the `#` symbol is how you [create headings](/news/2025-06-18_cleaner-nicer-qmd-output.qmd#headings-that-aren't-headings), and you can combine them to create nested headings and subheadings:
+This is a tricky quirk of using Quarto. In Markdown, the `#` symbol is how you [create headings](/news/2025-09-06_cleaner-nicer-qmd-output.qmd#headings-that-aren't-headings), and you can combine them to create nested headings and subheadings:
 
 ``` default
 # Task 1: Check-in
