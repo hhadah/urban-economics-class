@@ -1,5 +1,38 @@
 # This file is generated with data/extract-news-headings.R; do not edit by hand
 
+- title: "Session 4 FAQs"
+  categories:
+  - "FAQs"
+  date_actual: '1758559200'
+  date: "2025-09-22T16:40:00"
+  href: "/news/2025-09-22_faqs_week_04.html"
+  headings:
+  - id: "i-cant-remember-everything-i-need-to-type-i-cant-memorize-all-the-code-i-had-to-look-stuff-up-on-the-internet-why-didnt-you-cover-this-specific-thing"
+    text: "I can’t remember everything I need to type / I can’t memorize all the code
+      / I had to look stuff up on the internet / Why didn’t you cover this specific
+      thing?"
+  - id: "it-seems-weird-that-we-can-randomly-jitter-points-to-accurately-reveal-relationships"
+    text: "It seems weird that we can randomly jitter points to accurately reveal
+      relationships?"
+  - id: "i-want-my-lollipopbar-chart-to-go-sidewayshow-do-i-do-that"
+    text: "I want my lollipop/bar chart to go sideways—how do I do that?"
+  - id: "why-does-r-keep-yelling-at-me-with-warnings-and-messages"
+    text: "Why does R keep yelling at me with warnings and messages?"
+  - id: "why-do-i-keep-getting-messages-like-summarise-has-grouped-output-by-blah-when-using-group_by-and-summarize"
+    text: "Why do I keep getting messages like <code>summarise() has grouped output
+      by 'BLAH'</code> when using <code>group_by()</code> and <code>summarize()</code>?"
+  - id: "when-do-we-use-summarize-vs.-mutate-with-group_by"
+    text: "When do we use <code>summarize()</code> vs. <code>mutate()</code> with
+      <code>group_by()</code>?"
+  - id: "how-can-i-hide-warnings-and-messages"
+    text: "How can I hide warnings and messages?"
+  - id: "why-did-we-need-to-group-a-second-time-when-calculating-the-proportions-for-the-heatmap"
+    text: "Why did we need to group a second time when calculating the proportions
+      for the heatmap?"
+  - id: "how-can-i-add-a-line-break-to-the-text-in-my-plot"
+    text: "How can I add a line break to the text in my plot?"
+  - id: "how-can-i-control-the-dimensions-of-my-figures"
+    text: "How can I control the dimensions of my figures?"
 - title: "Week 3 FAQs"
   categories:
   - "FAQs"
