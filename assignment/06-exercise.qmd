@@ -7,7 +7,7 @@ date: "2025-10-06"
 knitr::opts_chunk$set(fig.align = "center")
 ```
 
-For this exercise you'll practice visualizing uncertainty by making histograms, density plots, and raincloud plots. You'll use data on state-level spending on children from 1997–2016. The data was collected by the [Urban Institute](https://datacatalog.urban.org/dataset/state-state-spending-kids-dataset) from a variety of government sources. It was a [#TidyTuesday dataset in September 2020](https://github.com/rfordatascience/tidytuesday/tree/main/data/2020/2020-09-15)
+For this exercise you'll practice visualizing uncertainty by making histograms, density plots, and raincloud plots. You'll use data on state-level spending on children from 1997–2016. The data was collected by the [Urban Institute](https://datacatalog.urban.org/dataset/state-state-spending-kids-dataset) from a variety of government sources. It was a [#TidyTuesday dataset in September 2020](https://github.com/rfordatascience/tidytuesday/tree/main/data/2020/2020-09-15).
 
 As always, if you're struggling, *please* use Discord and talk to me and your classmates! Don't suffer in silence!
 
