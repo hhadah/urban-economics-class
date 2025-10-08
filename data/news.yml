@@ -1,6 +1,6 @@
 # This file is generated with data/extract-news-headings.R; do not edit by hand
 
-- title: "Session 5 FAQs"
+- title: "Week 5 FAQs"
   categories:
   - "FAQs"
   date_actual: '1759221420'
@@ -35,7 +35,7 @@
       Is there a way to label things without a legend?"
   - id: "can-we-fill-with-a-pattern-instead-of-colors"
     text: "Can we fill with a pattern instead of colors?"
-- title: "Session 4 FAQs"
+- title: "Week 4 FAQs"
   categories:
   - "FAQs"
   date_actual: '1758559200'
