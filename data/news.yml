@@ -1,5 +1,40 @@
 # This file is generated with data/extract-news-headings.R; do not edit by hand
 
+- title: "Session 5 FAQs"
+  categories:
+  - "FAQs"
+  date_actual: '1759221420'
+  date: "2025-09-30T08:37:00"
+  href: "/news/2025-09-29_faqs_week-05.html"
+  headings:
+  - id: "why-should-i-use-ggsave-instead-of-just-rendering-a-quarto-document"
+    text: "Why should I use <code>ggsave()</code> instead of just rendering a Quarto
+      document?"
+  - id: "i-made-a-bunch-of-changes-to-my-plot-with-theme-but-when-i-used-ggsave-none-of-them-actually-saved.-why"
+    text: "I made a bunch of changes to my plot with <code>theme()</code> but when
+      I used <code>ggsave()</code>, none of them actually saved. Why?"
+  - id: "does-the-order-of-theme-things-matter-i-made-changes-with-theme-and-then-wiped-them-out-with-theme_minimal"
+    text: "Does the order of theme things matter? I made changes with <code>theme()</code>
+      and then wiped them out with <code>theme_minimal()</code>?"
+  - id: "if-i-want-to-use-the-same-theme-for-all-the-plots-in-my-document-do-i-need-to-reuse-all-that-code-all-the-time"
+    text: "If I want to use the same theme for all the plots in my document, do I
+      need to reuse all that code all the time?"
+  - id: "why-would-we-want-to-use-rel1.4-instead-of-actual-numbers-when-sizing-things"
+    text: "Why would we want to use <code>rel(1.4)</code> instead of actual numbers
+      when sizing things?"
+  - id: "im-using-macos-and-couldnt-render-as-pdf-when-using-a-custom-fonthow-do-i-fix-that"
+    text: "I’m using macOS and couldn’t render as PDF when using a custom font—how
+      do I fix that?"
+  - id: "in-chapter-22-wilke-talks-about-tablesis-there-a-way-to-make-pretty-tables-with-r"
+    text: "In chapter 22, Wilke talks about tables—is there a way to make pretty tables
+      with R?"
+  - id: "double-encoding-and-excessive-legends"
+    text: "Double encoding and excessive legends"
+  - id: "legends-are-cool-but-ive-read-that-directly-labeling-things-can-be-better.-is-there-a-way-to-label-things-without-a-legend"
+    text: "Legends are cool, but I’ve read that directly labeling things can be better.
+      Is there a way to label things without a legend?"
+  - id: "can-we-fill-with-a-pattern-instead-of-colors"
+    text: "Can we fill with a pattern instead of colors?"
 - title: "Session 4 FAQs"
   categories:
   - "FAQs"
