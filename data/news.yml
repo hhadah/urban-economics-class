@@ -1,5 +1,29 @@
 # This file is generated with data/extract-news-headings.R; do not edit by hand
 
+- title: "Week 6 FAQs"
+  categories:
+  - "FAQs"
+  date_actual: '1759953840'
+  date: "2025-10-08T20:04:00"
+  href: "/news/2025-10-08_faqs_week_06.html"
+  headings:
+  - id: "am-i-telling-r-what-to-do-with-my-code-or-is-it-telling-me-what-to-do-whos-in-charge-why-isnt-it-listening"
+    text: "Am I telling R what to do with my code, or is it telling me what to do?
+      Who’s in charge? Why isn’t it listening?!"
+  - id: "do-i-really-need-to-make-fancy-custom-themes-for-every-plot-arent-theme_bw-or-theme_gray-just-fine"
+    text: "Do I really need to make fancy custom themes for every plot? Aren’t <code>theme_bw()</code>
+      or <code>theme_gray()</code> just fine?"
+  - id: "i-have-numbers-like-20000-and-want-them-formatted-with-commas-like-20000.-can-i-do-that-automatically"
+    text: "I have numbers like 20000 and want them formatted with commas like 20,000.
+      Can I do that automatically?"
+  - id: "i-tried-using-gghalves-and-geom_half_point-but-i-got-an-error"
+    text: "I tried using {gghalves} and <code>geom_half_point()</code> but I got an
+      error?"
+  - id: "my-histogram-bars-are-too-wide-too-narrow-not-visible.-how-do-i-fix-that"
+    text: "My histogram bars are too wide / too narrow / not visible. How do I fix
+      that?"
+  - id: "does-it-matter-which-order-we-put-the-different-layers-in"
+    text: "Does it matter which order we put the different layers in?"
 - title: "Week 5 FAQs"
   categories:
   - "FAQs"
@@ -7,6 +31,8 @@
   date: "2025-09-30T08:37:00"
   href: "/news/2025-09-29_faqs_week-05.html"
   headings:
+  - id: "this-is-too-much-codetableau-can-do-all-this-so-why-cant-we-use-that"
+    text: "This is too much code—Tableau can do all this, so why can’t we use that?"
   - id: "why-should-i-use-ggsave-instead-of-just-rendering-a-quarto-document"
     text: "Why should I use <code>ggsave()</code> instead of just rendering a Quarto
       document?"
@@ -22,6 +48,8 @@
   - id: "why-would-we-want-to-use-rel1.4-instead-of-actual-numbers-when-sizing-things"
     text: "Why would we want to use <code>rel(1.4)</code> instead of actual numbers
       when sizing things?"
+  - id: "why-cant-i-change-title-text-with-theme"
+    text: "Why can’t I change title text with <code>theme()</code>?"
   - id: "im-using-macos-and-couldnt-render-as-pdf-when-using-a-custom-fonthow-do-i-fix-that"
     text: "I’m using macOS and couldn’t render as PDF when using a custom font—how
       do I fix that?"
