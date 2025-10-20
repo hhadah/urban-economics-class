@@ -9,7 +9,7 @@ knitr::opts_chunk$set(fig.align = "center")
 
 For this exercise you'll practice using vector editing software to enhance and refine a plot to make it publication-worthy. You'll use data on state-level spending on children from 1997–2016. The data was collected by the [Urban Institute](https://datacatalog.urban.org/dataset/state-state-spending-kids-dataset) from a variety of government sources. You already used this data [in Exercise 6](/assignment/06-exercise.qmd).
 
-For this exercise, you don't need to worry about any data manipuluation or anything. I've given you all the code you need to run. Instead, your job is to take a ggplot plot and enhance it, following the guidelines from an [organizational visual style guide](https://urbaninstitute.github.io/graphics-styleguide/). You'll use [Illustrator, Inkscape, or some other vector editing program](/resource/graphics-editors.qmd) to recreate this image:
+You don't need to worry about any data manipuluation or code or anything. I've given you all the code you need to run. Instead, your job is to take a ggplot plot and enhance it, following the guidelines from an [organizational visual style guide](https://urbaninstitute.github.io/graphics-styleguide/). You'll use [Illustrator, Inkscape, or some other vector editing program](/resource/graphics-editors.qmd) to recreate this image:
 
 ![](/projects/10-exercise/img/enhanced-plot.svg){width="100%"}
 
@@ -40,7 +40,7 @@ The instructions for this are a little different from past exercises. Read every
 2. Open the project either on your computer or in Posit.cloud
 
    - [{{< fa file-archive >}} `10-exercise.zip`](/projects/10-exercise.zip): If you're using R on your own computer, download this file, [*unzip it*](/resource/unzipping.qmd), and double click on the file named `10-exercise.Rproj`
-   - [{{< fa cloud >}} Posit.cloud project](https://posit.cloud/spaces/679548/content/11202180): Use this link if you're using Posit.cloud in your browser
+   - [{{< fa cloud >}} Posit.cloud project](https://posit.cloud/spaces/679548/content/11212291): Use this link if you're using Posit.cloud in your browser
 
 3. Rename the Quarto file named `your-name_exercise-10.qmd` to something that matches your name and open it in RStudio.
 
