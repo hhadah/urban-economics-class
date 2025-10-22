@@ -17,3 +17,5 @@ projects/*.zip
 
 /.luarc.json
 /_targets/*
+
+typst-pdf-stuff/*.pdf

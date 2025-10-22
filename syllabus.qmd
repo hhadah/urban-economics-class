@@ -1,11 +1,32 @@
 ---
 title: Syllabus
+pdf-title: "Data Visualization with R"
+pdf-subtitle: "PMAP 8551/4551 • Fall 2025"
+pdf-note: |
+  The full version of the course syllabus, schedule, and all course materials is available online at <https://datavizf25.classes.andrewheiss.com/>. This is only a partially complete static version.
+pdf-header-left: PMAP 8551/4551
+pdf-header-right: Fall 2025
+pdf-footer-left: Data Visualization with R
 reference-location: margin
+format: 
+  html: default
+  typst:
+    # COURSE SUBJECT-COURSE NUMBER-FACULTY LAST NAME-CRN-TERMYEAR
+    output-file: "PMAP-8551-HEISS-89550-FA25.pdf"
+    citeproc: true
+    csl: files/bib/chicago-notes.csl
+    include-in-header: 
+      - "typst-pdf-stuff/include-in-header.typ"
+    include-before-body:
+      - "typst-pdf-stuff/note.typ"
+    filters: 
+      - "typst-pdf-stuff/processing.lua"
+    mainfont: Public Sans
+    fontsize: "10pt"
 ---
 
 ```{r setup, message=FALSE, warning=FALSE, include=FALSE}
-library(dplyr)
-library(tibble)
+library(tidyverse)
 library(tinytable)
 
 knitr::opts_chunk$set(fig.align = "center")
@@ -68,17 +89,21 @@ Learning R can be difficult at first—it's like learning a new language, just l
 
 Even experienced programmers find themselves bashing their heads against seemingly intractable errors. If you're finding yourself taking way too long hitting your head against a wall and not understanding, take a break, talk to classmates, e-mail me, etc. 
 
-```{r echo=FALSE, out.width="60%"}
+```{r}
+#| include: false
+#| eval: false
+
 # https://twitter.com/allison_horst/status/1213275783675822080
-knitr::include_graphics("/files/img/syllabus/hosrt_error_tweet.png", error = FALSE)
 ```
 
-[![Alison Horst: Gator error](/files/img/syllabus/gator_error.jpg)](https://twitter.com/allison_horst/status/1213275783675822080)
+![](/files/img/syllabus/hosrt_error_tweet.png){width="60%" fig-align="center"}
+
+![Alison Horst: Gator error](/files/img/syllabus/gator_error.jpg)
 
 
 ## Course materials
 
-All of the readings and software in this class are **free**. There are free online version of all the textbooks, R and RStudio are inherently free, and GSU provides [free access to Adobe Illustrator](https://technology.gsu.edu/technology-services/it-services/software-computer-purchase/software-download-and-purchase/adobe-creative-cloud/).
+All of the readings and software in this class are **free**. There are free online versions of all the textbooks, R and RStudio are inherently free, and you can use [free vector editing software](/resource/graphics-editors.qmd).
 
 ### Books, articles, and other materials
 
@@ -133,7 +158,7 @@ I am deeply opposed to LLMs for writing.
 
 I am kinda opposed to LLMs for code, but I am deeply opposed to them for beginners at code.
 
-By definition, LLMs and other AI tools cannot produce truth (or even lies). They generate [bullshit](https://doi.org/10.1007/s10676-024-09775-5) [@HicksHumphriesSlater:2024; @Frankfurt:2005]^[I'm a super straight-laced Mormon and, like, never ever swear or curse, but in this case, the word has a formal philosophical meaning [@Frankfurt:2005], so it doesn't count :)]—a formal philosophical term that refers to text or speech that has no regard for truth.
+By definition, LLMs and other AI tools cannot produce truth (or even lies). They generate [bullshit](https://doi.org/10.1007/s10676-024-09775-5)^[I'm a super straight-laced Mormon and, like, never ever swear or curse, but in this case, the word has a formal philosophical meaning [@Frankfurt:2005], so it doesn't count :)]—a formal philosophical term that refers to text or speech that has no regard for truth [@HicksHumphriesSlater:2024; @Frankfurt:2005].
 
 [Please read this](/resource/ai-bs.qmd) to better understand how LLMs circumvent the writing and learning process.
 
@@ -188,7 +213,7 @@ This syllabus reflects a plan for the semester. Deviations may become necessary 
 
 ### Student hours
 
-Please watch this video: <small>(*this is not me, btw—this is a different Andrew*)</small>
+Please watch [this video](https://vimeo.com/270014784): <small>(*this is not me, btw—this is a different Andrew*)</small>
 
 <div class="ratio ratio-16x9">
 <iframe src="https://player.vimeo.com/video/270014784" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="display: block; margin: 0 auto 1rem;"></iframe>
@@ -273,6 +298,8 @@ grading <- tribble(
 )
 ```
 
+::: {.centered-table}
+
 ```{r show-assignments-table, echo=FALSE}
 assignments |>
   tt() |> 
@@ -281,6 +308,10 @@ assignments |>
   format_tt(j = 3, fn = scales::label_percent()) |> 
   format_tt(escape = TRUE)
 ```
+
+:::
+
+::: {.centered-table}
 
 ```{r show-grades-table, echo=FALSE}
 grading |>
@@ -291,7 +322,99 @@ grading |>
   style_tt(j = 2, bootstrap_css = "border-right: 0.1em dashed #d3d8dc;")
 ```
 
+:::
+
 
 ## Recipes
 
 Once you have read this entire syllabus and [the assignments page](/assignment/index.qmd), post your favorite recipe (either a link or the text) to the `#recipes` channel on Discord. I love cooking ([see here for a feed of some of my cooking adventures](https://bsky.app/search?q=from%3Aandrew.heiss.phd+%23pacooks)) and I'm always on the lookout for new things!
+
+:::::: {.content-visible when-format="typst"}
+
+## Schedule
+
+::: {.schedule-table}
+
+```{r}
+#| label: schedule-table
+#| warning: false
+#| message: false
+#| echo: false
+
+schedule <- read_csv(here::here("data/schedule.csv")) |>
+  mutate(session = case_when(
+    is.na(session) & str_detect(title, "session") ~ lag(session),
+    is.na(session) ~ glue::glue("Thing {row_number()}"),
+    .default = session
+  )) |> 
+  mutate(
+    deadline_actual = update(
+      date,
+      hour = hour(deadline),
+      minute = minute(deadline)
+    ),
+    deadline_nice = format(deadline_actual, "%I:%M %p"),
+    date_nice = case_when(
+      is.na(end_date) ~ format(date, "%B %e"),
+      !is.na(end_date) ~ glue::glue('{format(date, "%B %e")}–{format(end_date, "%B %e")}')
+    )
+  ) |>
+  mutate(
+    title = case_when(
+      str_detect(content, "class") ~ glue::glue("*{title}*"),
+      !is.na(deadline) ~ glue::glue("{title} _(due by {deadline_nice})_"),
+      .default = title
+    )
+  ) |>
+  select(group, session, date_nice, title)
+
+# Figure out alternating topics for special styling
+tbl_data <- schedule |>
+  group_by(session) |>
+  mutate(
+    is_first = row_number() == 1,
+    session = case_when(
+      str_starts(session, "Thing") ~ "Project",
+      is_first ~ session,
+      .default = ""
+    )
+  ) |>
+  ungroup() |>
+  # Add new rows for the group rows so that the row index values match the tt() table
+  reframe(
+    session = c(NA, session),
+    date_nice = c(NA, date_nice),
+    title = c(NA, title),
+    is_first = c(NA, is_first),
+    .by = group
+  ) |>
+  mutate(row_id = row_number()) |>
+  # Now that we have the correct row numbers, get rid of those placeholder rows
+  drop_na(is_first) |>
+  # Find which subgroup rows cluster together and mark their oddness/evenness
+  mutate(
+    session_sequential = cumsum(is_first),
+    session_highlight = session_sequential %% 2
+  ) |> 
+    # Typst doesn't like #TidyTuesday
+  mutate(title = str_replace(title, "#TidyTuesday", "\\\\#TidyTuesday"))
+
+
+# Extract the rows that should be highlighted
+highlight_rows <- tbl_data |>
+  filter(session_highlight == 1) |>
+  pull(row_id)
+
+# Make the table
+tbl_data |>
+  select(session, date_nice, title) |>
+  tt(colnames = FALSE) |>
+  group_tt(i = tbl_data$group) |>
+  style_tt("groupi", bold = TRUE, line = "b", line_width = 0.05) |>
+  style_tt(i = highlight_rows, background = "#eeeeee") |>
+  format_tt(j = 3, markdown = TRUE)
+```
+
+:::
+
+::::::
