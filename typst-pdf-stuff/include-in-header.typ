@@ -4,6 +4,14 @@
 #let header-right = [{{< meta pdf-header-right >}}]
 #let footer-left = [{{< meta pdf-footer-left >}}]
 
+// The course uses Fira Sans Condensed, but for Reasons, Typst doesn't see it
+// and lumps it together with regular Fira Sans (like, if you run `typst fonts`
+// in the terminal, the condensed version doesn't appear)
+//
+// To get the condensed version, you have to set `stretch` to some value:
+//
+// font: "Fira Sans", stretch: 75%
+
 
 // H1
 #show heading.where(level: 1): it => {
@@ -14,7 +22,7 @@
     stroke: (bottom: 1pt + luma(170)),
     inset: (bottom: 0.4em),
     [
-      #set text(size: 1em)
+      #set text(font: "Fira Sans", stretch: 75%, size: 1em)
       #it
     ]
   )
@@ -22,14 +30,14 @@
 
 // H2
 #show heading.where(level: 2): it => {
-  set text(size: 0.95em)
+  set text(font: "Fira Sans", stretch: 75%, size: 0.95em)
   set block(above: 1.5em, below: 0.8em)
   it
 }
 
 // H6 - headings in the course details section
 #show heading.where(level: 6): it => {
-  set text(size: 1.1em)
+  set text(font: "Fira Sans", stretch: 75%, size: 1.1em)
   set block(below: 0.8em)
   it
 }
@@ -130,12 +138,12 @@
       block(inset: (bottom: 1.5em))[
         #block(
           below: 2em,
-          text(font: "Public Sans", size: 2em, weight: "bold")[#title]
+          text(font: "Fira Sans", stretch: 75%, size: 2em, weight: "bold")[#title]
         )
         #if subtitle != none {
           block(
             above: 0em,
-            text(font: "Public Sans", size: 1.2em, weight: "regular")[#subtitle]
+            text(font: "Fira Sans", stretch: 75%, size: 1.2em, weight: "regular")[#subtitle]
           )
         }
       ],
@@ -159,7 +167,7 @@
 #set page(
   header: context {
     if counter(page).get().first() > 1 {
-      set text(font: "Public Sans", size: 0.8em)
+      set text(font: "Barlow", size: 0.8em)
       grid(
         columns: (1fr, 1fr),
         align: (left, right),
@@ -169,7 +177,7 @@
     }
   },
   footer: context [
-    #set text(font: "Public Sans", size: 0.8em)
+    #set text(font: "Barlow", size: 0.8em)
     #grid(
       columns: (1fr, 1fr),
       align: (left, right),
@@ -182,4 +190,4 @@
 // General global styling stuff
 #show par: set par(justify: false)  // This has to come at the end of this file
 #set text(hyphenate: false)
-#show link: set text(fill: rgb("#9f2d55"))
+#show link: set text(fill: rgb("#E16462"))

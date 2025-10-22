@@ -14,8 +14,8 @@
   dy: -1in,  // Move this thing into the top margin
   block(
     width: 100%,
-    fill: rgb("#ffd45340"),
-    stroke: rgb("#ffd453"),
+    fill: rgb("#FCCE2540"),
+    stroke: rgb("#FCCE25"),
     inset: 1em,
     {
       set text(size: 0.85em)

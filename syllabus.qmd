@@ -21,7 +21,7 @@ format:
       - "typst-pdf-stuff/note.typ"
     filters: 
       - "typst-pdf-stuff/processing.lua"
-    mainfont: Public Sans
+    mainfont: Barlow
     fontsize: "10pt"
 ---
 
@@ -398,7 +398,6 @@ tbl_data <- schedule |>
   ) |> 
     # Typst doesn't like #TidyTuesday
   mutate(title = str_replace(title, "#TidyTuesday", "\\\\#TidyTuesday"))
-
 
 # Extract the rows that should be highlighted
 highlight_rows <- tbl_data |>
