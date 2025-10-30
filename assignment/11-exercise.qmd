@@ -15,7 +15,7 @@ knitr::opts_chunk$set(fig.align = "center")
 
 For this exercise you'll get to practice making interactive plots and dashboards! You'll do it by creating a Quarto website and publishing it on the internet. That might sound intimidating and hard, but **don't worry!** Thanks to Quarto (and the starter code and detailed instructions I provide), it should be fairly straightforward.
 
-Complete instructions for the different tasks are at this website. Use the top navigation bar to look at the different pages:
+Complete instructions for the different tasks are [at this website](https://andrewheiss.quarto.pub/datavizf25_11-exercise-recreate/). Use the top navigation bar there to look at the different pages:
 
 - [{{< fa arrow-up-right-from-square >}} Exercise 11 data description](https://andrewheiss.quarto.pub/datavizf25_11-exercise-recreate/)
 - [{{< fa arrow-up-right-from-square >}} Exercise 11 instructions + how to submit](https://andrewheiss.quarto.pub/datavizf25_11-exercise-recreate/instructions.html)

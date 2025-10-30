@@ -90,6 +90,8 @@ It's probably easiest to not preview the page in Viewer panel in RStudio because
 
 You'll do Task 1 (your check-in) and Task 2 (a recreation of an interactive plot) in the file named `interactive-plots.qmd`. Open that file in RStudio and follow the instructions there.
 
+**For Task 2 you will recreate [an interactive plot](interactive-plots.qmd#task-2-interactive-plot){target="_blank"}** [(also accessible in the navigation bar at the top as "Tasks 1 and 2")]{style="font-size: 0.8em"}.
+
 ## Task 3: Dashboard
 
 You'll do Task 3 (making a basic dashboard) in the file named `dashboard.qmd`.
