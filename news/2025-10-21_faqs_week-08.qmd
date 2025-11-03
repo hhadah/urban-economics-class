@@ -1,0 +1,601 @@
+---
+title: "Week 8 FAQs"
+date: "2025-10-21T11:58"
+categories: [FAQs]
+toc-depth: 4
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  fig.width = 6, 
+  fig.height = 6 * 0.618, 
+  fig.align = "center", 
+  out.width = "80%",
+  collapse = TRUE
+)
+```
+
+### We keep seeing violin plots, but they're still confusing (and ugly and weird). Why are they a thing?
+
+Ha yeah, so despite what we covered back in the week on uncertainty, violin plots aren't actually that great and there are better alternatives.
+
+If you want a detailed deep dive into why they're bad, check out this (long but fascinating!) [video rant](https://www.youtube.com/watch?v=_0QMKFzW9fw) that covers both (1) the visual and interpretive issues with them, and (2) the sexism/misogyny that can inadvertently arise from using them:
+
+<div class="ratio ratio-16x9 mb-4 border">
+<iframe src="https://www.youtube.com/embed/_0QMKFzW9fw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+Density plots are fine and great and wonderful and I use them all the time. They're great for visualizing the distribution of variables. Like here, Gentoos are generally heavier than the other two species of penguins, and Adelies and Chinstraps are basically around the same weight:
+
+```{r}
+#| warning: false
+#| message: false
+
+library(tidyverse)
+
+penguins <- penguins |> 
+  drop_na(sex)
+
+ggplot(penguins, aes(x = body_mass, fill = species)) + 
+  geom_density(alpha = 0.5)
+```
+
+And you can do fancier things with them, like overlaying lots of them with {ggridges} (like you did in Exercise 6) or adding extra details like points (like with {gghalves}). 
+
+```{r}
+#| warning: false
+#| message: false
+
+library(gghalves)
+library(ggridges)
+
+set.seed(1234)
+
+ggplot(penguins, aes(x = body_mass, y = species, fill = species)) + 
+  geom_density_ridges() + 
+  guides(fill = "none")
+
+ggplot(penguins, aes(x = species, y = body_mass, fill = species)) + 
+  geom_half_point(aes(color = species), side = "l", size = 0.25) +
+  geom_half_violin(side = "r") +
+  guides(color = "none", fill = "none") + 
+  coord_flip()
+```
+
+You can even use the {ggdist} package to make all sorts of fancier density plots with extra information like point ranges showing the mean and confidence interval:
+
+```{r}
+#| warning: false
+#| message: false
+
+library(ggdist)
+
+ggplot(penguins, aes(x = body_mass, y = species, fill = species)) +
+  geom_dots(layout = "weave", side = "bottom") +
+  stat_slabinterval() + 
+  guides(color = "none", fill = "none")
+```
+
+Violin plots are weird because they're normal density plots, but duplicated and flipped so that they make big blobs.
+
+```{r}
+ggplot(penguins, aes(x = species, y = body_mass, fill = species)) + 
+  geom_violin() +
+  guides(fill = "none")
+```
+
+↑ those are just doubled density plots! Like, if we draw a line through each of the blobs, and rotate the plot, you can see the regular density plot and its mirrored version:
+
+```{r}
+ggplot(penguins, aes(x = species, y = body_mass, fill = species)) + 
+  geom_violin() +
+  geom_vline(xintercept = 1:3) +
+  guides(fill = "none") + 
+  coord_flip()
+```
+
+In that video up above, Angela Collier argues that the blobbiness of these violin plots is (1) useless and (2) adds no additional information and (3) bad.
+
+So in practice, yes, `geom_violin()` is a thing, but I'd recommend not using it. Stick with regular density plots or their fancier versions from {ggdist} and {ggridges} and {gghalves} (`geom_half_violin()` from {gghalves} itself is bizarre because a half violin plot is just a regular density plot!).
+
+
+### Using `paste0()` to build complex text is annoying! Is there a better way?
+
+In the example, I use `paste0()` to build text. The `paste()` function takes text and variables and concatenates them together into one string or character variable.
+
+For instance, if I want to take the penguins data and make a column that says something like `Species (sex; weight: X g; flipper length: Y mm)`, I'd do this:
+
+```{r}
+penguins |> 
+  mutate(nice_label = paste0(
+    species, " (", sex, "; weight: ", body_mass, 
+    " g; flipper length: ", flipper_len, " mm)"
+  )) |> 
+  select(nice_label) |> 
+  head(4)
+```
+
+That works, but that mix of variable names and quoted things inside `paste0()` is horrendously gross and hard to read and annoying to type!
+
+Fortunately there's a better way! [The {glue} package](https://glue.tidyverse.org/){target="_blank"} (which is installed as part of the tidyverse, but not loaded with `library(tidyverse)`) lets you substitute variable values directly in text without needing to separate everything with commas. Anything inside curly braces `{}` will get replaced with the value in the data:
+
+```{r}
+library(glue)
+
+penguins |> 
+  mutate(nice_label = glue(
+    "{species} ({sex}; weight: {body_mass} g; flipper length: {flipper_len} mm)"
+  )) |> 
+  select(nice_label) |> 
+  head(4)
+```
+
+Much nicer!
+
+
+### Why did my slopegraph labels repeat on both sides?
+
+When making your slopegraph, lots of you used two `geom_text()` (or `geom_text_repel()`) layers with different `hjust` arguments to make the labels left- and right-aligned, but you ended up with this:
+
+```{r}
+#| warning: false
+#| message: false
+
+library(gapminder)
+library(ggrepel)
+
+example_slope_graph <- gapminder |>
+  filter(year %in% c(1977, 2007), continent != "Oceania") |>
+  group_by(year, continent) |>
+  summarize(avg_lifeExp = mean(lifeExp))
+
+ggplot(
+  example_slope_graph,
+  aes(x = factor(year), y = avg_lifeExp, color = continent, group = continent)
+) +
+  geom_line() +
+  geom_text(aes(label = continent), hjust = 0) +
+  geom_text(aes(label = continent), hjust = 1) +
+  guides(color = "none") +
+  labs(x = NULL, y = "Average life expectancy") +
+  theme_minimal()
+```
+
+That's because you're plotting the values twice. You *should* plot them twice, but you need to control which ones you're plotting. You want the labels for the left side of the plot (1977 here) to be right-aligned and the labels for the right side of the plot (2007 here) to be left-aligned.
+
+To do that, you can filter the data that you're plotting with each of the `geom_text()` layers:
+
+```{r}
+#| warning: false
+#| message: false
+
+ggplot(
+  example_slope_graph,
+  aes(x = factor(year), y = avg_lifeExp, color = continent, group = continent)
+) +
+  geom_line() +
+  geom_text(
+    data = filter(example_slope_graph, year == 2007),
+    aes(label = continent),
+    hjust = 0
+  ) +
+  geom_text(
+    data = filter(example_slope_graph, year == 1977),
+    aes(label = continent),
+    hjust = 1
+  ) +
+  guides(color = "none") +
+  labs(x = NULL, y = "Average life expectancy") +
+  theme_minimal()
+```
+
+Alternatively, you can avoid filtering and instead make two different columns—one with labels for the first/left side and one with labels for the last/right side. This is what I do [in the example](/example/08-example.qmd#slopegraphs). This is especially useful if you're customizing the labels so that the first is formatted differently from the last.
+
+For instance, we can use the continent name and life expectancy for the first label and just the life expectancy for the last label, since there's no need to repeat the continent name. We'll use `glue()` from the {glue} package to make two label columns. The first version is only present in 1977; the second version is only present in 2007:
+
+```{r}
+#| warning: false
+#| message: false
+
+library(glue)
+
+example_slope_graph_nice_labels <- gapminder |>
+  filter(year %in% c(1977, 2007), continent != "Oceania") |>
+  group_by(year, continent) |>
+  summarize(avg_lifeExp = mean(lifeExp)) |>
+  mutate(
+    label_first = ifelse(
+      year == 1977,
+      glue("{continent}:\n{round(avg_lifeExp, 2)} years"),
+      NA
+    ),
+    label_last = ifelse(
+      year == 2007,
+      glue("{round(avg_lifeExp, 2)} years"),
+      NA
+    )
+  )
+example_slope_graph_nice_labels
+```
+
+Now we can use those two label columns and we don't need to filter anymore:
+
+```{r}
+#| warning: false
+#| message: false
+
+ggplot(
+  example_slope_graph_nice_labels,
+  aes(x = factor(year), y = avg_lifeExp, color = continent, group = continent)
+) +
+  geom_line() +
+  geom_text(aes(label = label_first), hjust = 1) +
+  geom_text(aes(label = label_last), hjust = 0) +
+  guides(color = "none") +
+  labs(x = NULL, y = "Average life expectancy") +
+  theme_minimal()
+```
+
+### The guide lines in the slopegraph look like real lines of data! Is there a way to fix that?
+
+If you're using {ggrepel} the repelled labels will have little guide lines to indicate the points they're supposed to represent:
+
+```{r}
+#| warning: false
+#| message: false
+
+ggplot(
+  example_slope_graph,
+  aes(x = factor(year), y = avg_lifeExp, color = continent, group = continent)
+) +
+  geom_line() +
+  geom_text_repel(
+    data = filter(example_slope_graph, year == 2007),
+    aes(label = continent),
+    hjust = 0,
+    direction = "y",
+    nudge_x = 0.5,
+    seed = 1234
+  ) +
+  geom_text_repel(
+    data = filter(example_slope_graph, year == 1977),
+    aes(label = continent),
+    hjust = 1,
+    direction = "y",
+    nudge_x = -0.5,
+    seed = 1234,
+  ) +
+  guides(color = "none") +
+  labs(x = NULL, y = "Average life expectancy") +
+  theme_minimal()
+```
+
+Those guide lines are helpful, but they look too much like actual data lines! It looks like life expectancy goes flat for the years before 1977 and after 2007.
+
+This is breaking the C in CRAP—there's not a lot of contrast between the data lines and the guide lines.
+
+To fix it, make them different and add contrast. For instance, we can make the data lines thicker with `linewidth` and make the guide lines dotted with `segment.linetype`:
+
+```{r}
+#| warning: false
+#| message: false
+
+ggplot(
+  example_slope_graph,
+  aes(x = factor(year), y = avg_lifeExp, color = continent, group = continent)
+) +
+  geom_line(linewidth = 1.5) +
+  geom_text_repel(
+    data = filter(example_slope_graph, year == 2007),
+    aes(label = continent),
+    hjust = 0,
+    direction = "y",
+    nudge_x = 0.5,
+    seed = 1234,
+    segment.linetype = "dotted"
+  ) +
+  geom_text_repel(
+    data = filter(example_slope_graph, year == 1977),
+    aes(label = continent),
+    hjust = 1,
+    direction = "y",
+    nudge_x = -0.5,
+    seed = 1234,
+    segment.linetype = "dotted"
+  ) +
+  guides(color = "none") +
+  labs(x = NULL, y = "Average life expectancy") +
+  theme_minimal()
+```
+
+### I have numbers like 20000 and want them formatted with commas like 20,000. Can I do that automatically?
+
+Yes you can! There's an incredible package called [{scales}](https://scales.r-lib.org/). It lets you format numbers and axes and all sorts of things in magical ways. If you [look at the documentation](https://scales.r-lib.org/reference/index.html), you'll see a ton of `label_SOMETHING()` functions, like `label_comma()`, `label_dollar()`, and `label_percent()`.
+
+You can use these different labeling functions inside `scale_AESTHETIC_WHATEVER()` layers in ggplot. 
+
+`label_comma()` adds commas:
+
+```{r gapminder-comma, message=FALSE}
+library(tidyverse)
+library(scales)
+library(gapminder)
+
+gapminder_2007 <- gapminder |>
+  filter(year == 2007)
+
+ggplot(gapminder_2007, aes(x = gdpPercap)) +
+  geom_histogram(binwidth = 1000) +
+  scale_x_continuous(labels = label_comma())
+```
+
+`label_dollar()` adds commas and includes a "$" prefix:
+
+```{r gapminder-dollar}
+ggplot(gapminder_2007, aes(x = gdpPercap)) +
+  geom_histogram(binwidth = 1000) +
+  scale_x_continuous(labels = label_dollar())
+```
+
+`label_percent()` multiplies values by 100 and formats them as percents:
+
+```{r gapminder-percent}
+gapminder_percents <- gapminder_2007 |> 
+  group_by(continent) |> 
+  summarize(n = n()) |> 
+  mutate(prop = n / sum(n))
+
+ggplot(gapminder_percents, aes(x = continent, y = prop)) +
+  geom_col() +
+  scale_y_continuous(labels = label_percent())
+```
+
+You can also change a ton of the settings for these different labeling functions. Want to format something as Euros and use periods as the number separators instead of commas, like Europeans? Change the appropriate arguments! You can check the documentation for each of the `label_WHATEVER()` functions to see what you can adjust ([like `label_dollar()` here](https://scales.r-lib.org/reference/label_dollar.html))
+
+```{r gapminder-euro, warning=FALSE}
+ggplot(gapminder_2007, aes(x = gdpPercap)) +
+  geom_histogram(binwidth = 1000) +
+  scale_x_continuous(labels = label_dollar(prefix = "€", big.mark = "."))
+```
+
+All the `label_WHATEVER()` functions actually create copies of themselves, so if you're using lots of custom settings, you can create your own label function, like `label_euro()` here:
+
+```{r gapminder-euro-custom, warning=FALSE}
+# Make a custom labeling function
+label_euro <- label_dollar(prefix = "€", big.mark = ".")
+
+# Use it on the x-axis
+ggplot(gapminder_2007, aes(x = gdpPercap)) +
+  geom_histogram(binwidth = 1000) +
+  scale_x_continuous(labels = label_euro)
+```
+
+These labeling functions also work with other aesthetics, like fill and color and size. Use them in `scale_AESTHETIC_WHATEVER()`:
+
+```{r gapminder-scales-legends}
+ggplot(
+  gapminder_2007, 
+  aes(x = gdpPercap, y = lifeExp, size = pop, color = pop)
+) +
+  geom_point() +
+  scale_x_continuous(labels = label_dollar()) +
+  scale_size_continuous(labels = label_comma()) +
+  scale_color_viridis_c(labels = label_comma())
+```
+
+There are also some really neat and fancy things you can do with scales, like formatting logged values, abbreviating long numbers, and many other things. [Check out this post](https://www.andrewheiss.com/blog/2022/12/08/log10-natural-log-scales-ggplot/) for an example of working with logged values.
+
+```{r gapminder-scatter-fancy}
+ggplot(
+  gapminder_2007,
+  aes(x = gdpPercap, y = lifeExp, size = pop, color = continent)
+) +
+  geom_point() +
+  scale_x_log10(
+    breaks = 500 * 2^seq(1, 9, by = 1),
+    labels = label_dollar(scale_cut = append(scales::cut_short_scale(), 1, 1))
+  ) +
+  scale_size_continuous(labels = label_comma(scale_cut = cut_short_scale()))
+```
+
+### Are geofacet plots used in real life?
+
+Yes! You'll see them pop up all over the place. Check out [this article by ProPublica](https://www.propublica.org/article/whooping-cough-measles-outbreak-vaccine-hesitancy-trump), for example, which includes maps like this:
+
+![](img/propublica-geofacet.png)
+
+
+### How can I get month and weekday names or abbreviations for dates?
+
+Many of you have asked how to take month numbers and change them into month names or month abbreviations. 
+
+I've seen some of you use something like a big if else statement: if the month number is 1, use "January"; if the month number is 2, use "February"; and so on
+
+```r
+... |>
+  mutate(month_name = case_when(
+    month_number == 1 ~ "January",
+    month_number == 2 ~ "February",
+    month_number == 3 ~ "March",
+    ...
+  ))
+```
+
+While that works, it's kind of a brute force approach. There's a better, far easier way!
+
+The {lubridate} package (one of the nine packages that gets loaded when you run `library(tidyverse)`) has some neat functions for extracting and formatting parts of dates. You saw these in Exercise 4:
+
+```r
+# Add columns for the year and month
+mutate(
+  intake_year = year(intake_date),
+  intake_month = month(intake_date, label = TRUE, abbr = FALSE)
+)
+```
+
+These take dates and do stuff with them. For instance, let's put today's date in a variable named `x`:
+
+```{r}
+x <- ymd("2025-10-21")
+x
+```
+
+We can extract the year using `year()`:
+
+```{r}
+year(x)
+```
+
+…or the week number using `weeknum()`:
+
+```{r}
+week(x)
+```
+
+…or the month number using `month()`:
+
+```{r}
+month(x)
+```
+
+If you look at the help page for `month()`, you'll see that it has arguments for `label` and `abbr`, which will toggle text instead numbers, and full month names instead of abbreviations:
+
+```{r}
+month(x, label = TRUE, abbr = TRUE)
+month(x, label = TRUE, abbr = FALSE)
+```
+
+It outputs ordred factors too, so the months are automatically in the right order for plotting!
+
+`wday()` does the same thing for days of the week:
+
+```{r}
+wday(x)
+wday(x, label = TRUE, abbr = TRUE)
+wday(x, label = TRUE, abbr = FALSE)
+```
+
+So instead of doing weird data contortions to get month names or weekday names, just use `month()` and `wday()`. You can use them directly in `mutate()`. For example, here they are in action in a little sample dataset:
+
+```{r}
+example_data <- tribble(
+  ~event, ~date,
+  "Moon landing", "1969-07-20",
+  "WHO COVID start date", "2020-03-13"
+) |>
+  mutate(
+    # Convert to an actual date
+    date_actual = ymd(date),
+    # Extract a bunch of things
+    year = year(date_actual),
+    month_num = month(date_actual),
+    month_abb = month(date_actual, label = TRUE, abbr = TRUE),
+    month_full = month(date_actual, label = TRUE, abbr = FALSE),
+    week_num = week(date_actual),
+    wday_num = wday(date_actual),
+    wday_abb = wday(date_actual, label = TRUE, abbr = TRUE),
+    wday_full = wday(date_actual, label = TRUE, abbr = FALSE)
+  )
+example_data
+```
+
+### Can I get these automatic month and day names in non-English languages?
+
+Lots of you speak languages other than English. While R function *names* like `plot()` and `geom_point()` and so on are locked into English, the messages and warnings that R spits out can be localized into most other languages. R detects what language your computer is set to use and then tries to match it.
+
+Functions like `month()` and `wday()` also respect your computer's language setting and will give you months and days in whatever your computer is set to. That's neat, but what if your computer is set to French and you want the days to be in English? Or what if your computer is set to English but you're making a plot in German?
+
+You can actually change R's localization settings to get output in different languages!
+
+If you want to see what your computer is currently set to use, run `Sys.getLocale()`:
+
+```{r}
+Sys.getlocale()
+```
+
+There's a bunch of output there—the first part (`en_US.UTF-8`) is the most important and tells you the language code. The code here follows a pattern and has three parts:
+
+- A language: `en`. This is the langauge, and typically uses a two-character abbreviation following the [ISO 639 standard](https://en.wikipedia.org/wiki/ISO_639-1)
+- A territory: `US`. This is the country or region for that language, used mainly to specify the currency. If it's set to `en_US`, it'll use US conventions (like "$" and "color"); if it's set to `en_GB` it'll use British conventions (like "£" and "colour"). It uses a two-character abbreviation following the [ISO 3166 standard](https://en.wikipedia.org/wiki/ISO_3166).
+- An encoding: `UTF-8`. This is how the text is actually represented and stored on the computer. This defaults to Unicode (UTF-8) here. You don't generally need to worry about this.
+
+For macOS and Linux (i.e. Posit Cloud), setting locale details is pretty straightforward and predictable because they both follow this pattern consistently:
+
+- `en_GB`: British English
+- `fr_FR`: French in France
+- `fr_CH`: French in Switzerland
+- `de_CH`: German in Switzerland
+- `de_DE`: German in Germany
+
+If you run `locale -a` in your *terminal* (not in your R console) on macOS or in Posit Cloud, you'll get a list of all the different locales your computer can use. Here's what I have on my computer:
+
+```{r}
+#| echo: false
+#| collapse: false
+#| class-output: text
+
+system("locale -a", intern = TRUE) |>
+  str_split_fixed("\\.", 2) |>
+  magrittr::extract(, 1) |>
+  unique() |>
+  sort()
+```
+
+For whatever reason, Windows doesn't use this naming convention. It uses dashes or full words instead, like `en-US` or `american` or `en-CA` or `canadian`. You can [see a list here](https://learn.microsoft.com/en-us/cpp/c-runtime-library/language-strings?view=msvc-170), or google `Windows language country strings` (that's actually [RStudio's official recommendation for finding Windows language codes](https://rstudio.github.io/r-manuals/r-admin/Internationalization.html))
+
+Once you know the language code, you can use it in R. Let's make a little variable named `x` with today's date:
+
+```{r}
+x <- ymd("2024-07-12")
+```
+
+Because I'm using English as my default locale, the output of `wday()` and `month()` will be in English:
+
+```{r}
+wday(x, label = TRUE, abbr = FALSE)
+month(x, label = TRUE, abbr = FALSE)
+```
+
+Those functions have a `locale` argument, though, so it's really easy to switch between languages:
+
+::: {.panel-tabset}
+### Weekdays
+
+```{r}
+wday(x, label = TRUE, abbr = FALSE, locale = "en_US")
+wday(x, label = TRUE, abbr = FALSE, locale = "fr_FR")
+wday(x, label = TRUE, abbr = FALSE, locale = "fr_BE")
+wday(x, label = TRUE, abbr = FALSE, locale = "it_IT")
+wday(x, label = TRUE, abbr = FALSE, locale = "zh_CN")
+```
+
+### Months
+
+```{r}
+month(x, label = TRUE, abbr = FALSE, locale = "en_US")
+month(x, label = TRUE, abbr = FALSE, locale = "fr_FR")
+month(x, label = TRUE, abbr = FALSE, locale = "fr_BE")
+month(x, label = TRUE, abbr = FALSE, locale = "it_IT")
+month(x, label = TRUE, abbr = FALSE, locale = "zh_CN")
+```
+
+:::
+
+You can also set the locale for your entire R session like this:
+
+```{r}
+Sys.setlocale(locale = "de_DE")
+```
+
+Now `month()` and `wday()` will use German by default without needing to set the `locale` argument:
+
+```{r}
+month(x, label = TRUE, abbr = FALSE)
+wday(x, label = TRUE, abbr = FALSE)
+```
+
+I'll switch everything back to English :)
+
+```{r}
+Sys.setlocale(locale = "en_US.UTF-8")
+```
