@@ -1,6 +1,15 @@
 ---
 title: "Enhancing graphics"
 date: "2025-11-03"
+format:
+  html:
+    include-in-header:
+      - text: |
+          <style>
+            p code.sourceCode, li code.sourceCode, td code.sourceCode {
+              background-color: inherit;
+            }
+          </style>
 ---
 
 ```{r setup, include=FALSE}
@@ -93,7 +102,7 @@ Edit the base plot in Illustrator, Inkscape, or some other vector editing progra
 
 1. Place the exported image in the same folder as your `.qmd` file and include it in your document. Add images with Markdown syntax like this (This is not R code! Don't put this in an R chunk!):
 
-   ```{.markdown}
+   ```{.default}
    blah blah here's some text
 
    ![Some sort of caption](name-of-file.png)
