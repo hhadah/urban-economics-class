@@ -10,5 +10,6 @@
 *.svg
 !img/*.png
 !img/*.svg
+!assets/*.svg
 
 /.quarto/
