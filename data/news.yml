@@ -1,5 +1,29 @@
 # This file is generated with data/extract-news-headings.R; do not edit by hand
 
+- title: "Week 11 FAQs"
+  categories:
+  - "FAQs"
+  date_actual: '1762863000'
+  date: "2025-11-11T12:10:00"
+  href: "/news/2025-11-11_faqs_week-11-live.html"
+  headings:
+  - id: "do-people-use-plotly-and-quarto-dashboards-and-websites-in-the-real-world"
+    text: "Do people use Plotly and Quarto dashboards and websites in the real world?"
+  - id: "my-plot-didnt-translate-perfectly-to-ggplotlywhy"
+    text: "My plot didn’t translate perfectly to ggplotly—why?"
+  - id: "when-should-we-use-a-dashboard-vs.-a-full-shiny-app"
+    text: "When should we use a dashboard vs. a full Shiny app?"
+  - id: "but-i-dont-want-to-learn-a-whole-other-language-with-ojs-to-show-in-browser-interactive-graphsis-there-a-way-to-use-r-in-the-browser-without-shiny"
+    text: "But I don’t want to learn a whole other language with OJS to show in-browser
+      interactive graphs—is there a way to use R in the browser <em>without</em> Shiny?"
+  - id: "i-rendered-my-file-dashboard-but-it-didnt-appear-in-the-viewer-panelwhy-not"
+    text: "I rendered my file / dashboard but it didn’t appear in the Viewer panel—why
+      not?"
+  - id: "do-people-use-viridis-palettes-in-real-life"
+    text: "Do people use viridis palettes in real life?"
+  - id: "im-bored-with-ggplots-default-colors-andor-viridishow-can-i-use-other-color-palettes"
+    text: "I’m bored with ggplot’s default colors and/or viridis—how can I use other
+      color palettes?"
 - title: "Week 10 FAQs"
   categories:
   - "FAQs"
