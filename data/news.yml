@@ -1,5 +1,40 @@
 # This file is generated with data/extract-news-headings.R; do not edit by hand
 
+- title: "Grades, zeroes, and ✓−s in the gradebook"
+  categories:
+  - "course details"
+  date_actual: '1762951980'
+  date: "2025-11-12T12:53:00"
+  href: "/news/2025-11-12_grades-zeroes-check-minuses.html"
+  headings: []
+- title: "Mini project 1 feedback"
+  categories:
+  - "FAQs"
+  - "feedback"
+  date_actual: '1762945560'
+  date: "2025-11-12T11:06:00"
+  href: "/news/2025-11-12_feedback-mini-project-01.html"
+  headings:
+  - id: "warnings-and-messages"
+    text: "Warnings and messages"
+  - id: "raw-llm-output"
+    text: "Raw LLM output"
+  - id: "figure-in-the-document-doesnt-match-the-standalone-image"
+    text: "Figure in the document doesn’t match the standalone image"
+  - id: "sorting-and-ordering"
+    text: "Sorting and ordering"
+  - id: "unbalanced-facets"
+    text: "Unbalanced facets"
+  - id: "overlapping-text"
+    text: "Overlapping text"
+  - id: "commas"
+    text: "Commas"
+  - id: "omit-time-based-axis-titles"
+    text: "Omit time-based axis titles"
+  - id: "remove-redundant-legends"
+    text: "Remove redundant legends"
+  - id: "format-code-more-consistently"
+    text: "Format code more consistently"
 - title: "Week 11 FAQs"
   categories:
   - "FAQs"
