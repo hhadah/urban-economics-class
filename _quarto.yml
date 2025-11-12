@@ -51,7 +51,7 @@ website:
     locale: en_US
 
   repo-url: "https://github.com/andrewheiss/datavizf25.classes.andrewheiss.com"
-  repo-actions: [edit, issue]
+  repo-actions: [source, issue]
   
   page-navigation: true
 
