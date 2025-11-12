@@ -394,6 +394,12 @@ pre.text {
   color: #ffffff;
 }
 
+// Fix the doubled code block background color in the nested list
+// It was displaying with light gray inside the dark monokai area
+// Related to https://github.com/quarto-dev/quarto-cli/issues/13390
+p code.sourceCode, li code.sourceCode, td code.sourceCode {
+    background-color: inherit;
+}
 
 // Create a temporary no-stripe class for gt tables 
 .no-stripe .table tr.odd {
