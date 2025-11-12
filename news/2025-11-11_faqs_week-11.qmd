@@ -72,6 +72,27 @@ options(
 ```
 
 
+### How do I update my site if I make changes?
+
+If you make changes to your website later, you can update the live version by running `quarto publish` again. It'll go a lot faster after the first time because you won't have to answer all the different initial questions—it should just render and upload right away.
+
+### Can we make our own websites to display our work and our projects?
+
+YES! You can (and should!)! In the past I've had students make portfolio websites showing off their different projects (you can make a [listing that shows a bunch of smaller pages](https://quarto.org/docs/websites/website-listings.html), similar to a blog), and in my other more stats-y classes, I've had students create their final papers and projects using Quarto websites with interactive plots and tables.
+
+I've had students use these websites when applying for jobs, showing potential employers what they've made and what they can do. Having a URL for a site is a really easy way to share the things you make and show off the things you can do.
+
+[My own personal website](https://www.andrewheiss.com/) is built with Quarto and has listings for different talks and research projects and blog posts. Lots and lots and lots of people do the same thing. I'd *highly recommend* building one for yourself. [See this little workshop I teach](https://andrewheiss.github.io/quarto-websites_2025-10/) for a bunch of extra resources and tips for creating your own website.
+
+### Can I customize the URL for my site? Like www.myname.com?
+
+Yep! You can buy a domain name and point it to your website so that people can go to yourname.com instead of yourname.quarto.pub.
+
+Though technically you **can't** use custom domains with Quarto Pub—you'd need to publish your site elsewhere, like at GitHub Pages, which is also free, just a little more complicated to set up. [There are complete instructions here](https://quarto.org/docs/publishing/github-pages.html) (and [here are the instructions](https://quarto.org/docs/publishing/github-pages.html#custom-domain) for managing the domain name if you have one).
+
+[See these slides and resources too](https://andrewheiss.github.io/quarto-websites_2025-10/materials/publishing/).
+
+
 ### Do people use Plotly and Quarto dashboards and websites in the real world?
 
 Absolutely!
@@ -80,7 +101,7 @@ In the lecture I mentioned that most COVID dashboards were/are made with Shiny o
 
 Many people and organizations have been moving to Quarto. In November 2024, Idaho launched a [new election results dashboard](https://archive.voteidaho.gov/results/2024/general/) for its general election results and it's 100% built with Quarto and Plotly. 
 
-I gave a talk about making the website at Posit's annual posit::conf() conference in 2025 that you can see here, and we made a [whole little companion tutorial site here](https://andrewheiss.github.io/election-desk/).
+I gave a talk about I helped make that website at Posit's annual posit::conf() conference in 2025 that you can see here, and we made a [whole little companion tutorial site here](https://andrewheiss.github.io/election-desk/).
 
 ```{=html}
 <div class="ratio ratio-16x9 mb-4">
@@ -142,6 +163,42 @@ plot_thing <- ggplot(data = penguins) +
 girafe(ggobj = plot_thing)
 ```
 
+### How did you get the two value text boxes to stack on top of each other in the bottom row?
+
+First, make sure you check the answer key for Exercise 11 on iCollege—the [complete code](https://andrewheiss.quarto.pub/datavizf25_11-exercise-answers/dashboard-code.html) for the dashboard that you had to recreate is there.
+
+In short, you do something like this for the second row. Having the two value boxes in one column makes them stack:
+
+````default
+## Row
+
+### Column
+
+```{{r}}
+#| content: valuebox
+#| title: "Number of islands"
+list(
+  ...
+)
+```
+
+```{{r}}
+#| content: valuebox
+#| title: "Favorite food"
+list(
+  ...
+)
+```
+
+### Column
+
+```{{r}}
+p <- ggplot(...) +
+  geom_whatever()
+
+ggploly(p)
+```
+````
 
 ### When should we use a dashboard vs. a full Shiny app?
 

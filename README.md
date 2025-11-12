@@ -9,7 +9,7 @@
 
 ------------------------------------------------------------------------
 
-**[Quarto](https://quarto.org/) + [{targets}](https://docs.ropensci.org/targets/) + [{renv}](https://rstudio.github.io/renv/) = magic! 🧙‍♂️**
+**[Quarto](https://quarto.org/) + [{targets}](https://docs.ropensci.org/targets/) + [{renv}](https://rstudio.github.io/renv/) = magic! 🧙**
 
 ------------------------------------------------------------------------
 
