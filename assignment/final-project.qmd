@@ -32,7 +32,7 @@ Here's what you'll need to do:
 
 5. **Export** the final graphic from Illustrator/Affinity/Inkscape as a PDF *and* as a PNG.
 
-6. **Write** a memo using Quarto to introduce, frame, and describe your story and figure. [Use this template to get started](/files/projects/your_name_finalproject.qmd). You should include the following in the memo:
+6. **Write** a memo using Quarto to introduce, frame, and describe your story and figure. [Use this template to get started](/projects/final-project/your-name_final-project.qmd)—that template is included in the .zip and Posit Cloud versions of the project. You should include the following in the memo:
 
    - Executive summary
    - Background information and summary of the data
@@ -40,7 +40,7 @@ Here's what you'll need to do:
    - Explanation and description for the final figure
    - Final figure should be included as an image (remember `![Caption goes here](path/to/file.png)`)
 
-Remember to follow Quarto etiquette rules and style—don't have it output extraneous messages or warnings, include summary tables in nice tables, adjust the dimensions for your figures, and remove the placeholder text that's in the template already (i.e. I don't want to see stuff like "Describe and show how you cleaned and reshaped the data" in the final report.)
+Remember to follow Quarto etiquette rules and style—don't have it output extraneous messages or warnings, include summary tables in nice tables, adjust the dimensions for your figures, and **remove the placeholder text that's in the template already** (i.e. I don't want to see stuff like "Describe and show how you cleaned and reshaped the data" in the final report.)
 
 **You can [download a full example of what a final project might look like](/projects/example_final.zip)** (but don't make your final combined visualization look exactly like this—show some creativity!)
 
