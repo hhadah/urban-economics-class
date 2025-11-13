@@ -1,0 +1,16 @@
+---
+title: "SOME GOOD USEFUL TITLE HERE"
+subtitle: "Final project --- PMAP 8551/4551, Fall 2025"
+author: "YOUR NAME HERE"
+date: "DATE GOES HERE"
+date-format: "long"
+format:
+  html:
+    toc: true
+  typst:
+    toc: true
+  pdf:
+    toc: true
+  docx:
+    toc: true
+---

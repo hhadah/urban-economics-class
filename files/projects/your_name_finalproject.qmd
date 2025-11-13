@@ -43,4 +43,4 @@ Describe and show how you created the first figure. Why did you choose this figu
 
 Show the final figure that you created in Inkscape or Illustrator/InDesign. Describe why you designed it the way you did? Why did you choose those colors, fonts, and other design elements? Does it convey truth?
 
-![Caption for your final figure](images/name_of_figure)
+![Caption for your final figure](images/name_of_figure.pdf)
