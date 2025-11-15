@@ -165,6 +165,65 @@ We could also figure out a systematic way to indicate acts and scenes, but that'
 
 Now that we have tidy text data, let's do stuff with it!
 
+::: {.callout-important #count}
+### `count()` vs `group_by()` |> `summarize()`
+
+Throughout this example, you'll see the `count()` function a lot. It is a useful shortcut for calculating group counts. It is identical to using a specific combination of `group_by()` and `summarize()`.
+
+For example, here's the normal `group_by() |> summarize()` way to find the total count of each penguin species. We use the `n()` function to create a new column named `n` (kinda confusing, yes) that contains the number of rows in each species group:
+
+```{r}
+penguins |> 
+  group_by(species) |>
+  summarize(n = n())
+```
+
+Here's the same thing with `count()`:
+
+```{r}
+penguins |> 
+  count(species)
+```
+
+It does the same thing. `count(GROUP)` is a shortcut for `group_by(GROUP) |> summarize(n = n())`.
+
+You can use multiple groupings too. Here's the `group_by() |> summarize()` way:
+
+```{r}
+penguins |> 
+  group_by(species, island, sex) |>
+  summarize(n = n())
+```
+
+And here's the `count()` way:
+
+```{r}
+penguins |> 
+  count(species, island, sex)
+```
+
+`count()` also has a `sort` argument that can save some arranging work. Here's the normal way, with `arrange(desc(n))` added to the end:
+
+```{r}
+penguins |> 
+  group_by(species) |>
+  summarize(n = n()) |> 
+  arrange(desc(n))
+```
+
+Here's the same thing with `count(sort = TRUE)`:
+
+```{r}
+penguins |> 
+  count(species, sort = TRUE)
+```
+
+---
+
+You can use either method! I actually tend to like using `group_by() |> summarize()` because I'll often want other group statistics (like means or medians), and `count()` doesn't let you get those. Even if I'm only counting things, I'll still use `group_by() |> summarize()` just because. But `count()` is still a useful shortcut if you're only counting things.
+
+:::
+
 
 ## Tokens and word counts
 
@@ -179,7 +238,7 @@ Let's just work with the Shakespeare tragedies:
 ```{r tidy-shakespeare-1}
 tragedies_words <- tragedies_raw |> 
   drop_na(text) |> 
-  unnest_tokens(word, text)
+  unnest_tokens(output = word, input = text)
 
 head(tragedies_words)
 ```
@@ -193,7 +252,7 @@ Now that we have words, we can filter and count the words. Here's what's happeni
 ```{r top-15-shakespeare, message=FALSE, warning=FALSE}
 top_words_tragedies <- tragedies_words |> 
   # Remove stop words
-  anti_join(stop_words) |> 
+  anti_join(stop_words, by = join_by(word)) |> 
   # Get rid of old timey words and stage directions
   filter(!(word %in% c("thou", "thy", "haue", "thee", 
                       "thine", "enter", "exeunt", "exit"))) |> 
@@ -201,7 +260,7 @@ top_words_tragedies <- tragedies_words |>
   count(title, word, sort = TRUE) |> 
   # Keep top 15 in each play
   group_by(title) |> 
-  top_n(15) |> 
+  slice_max(n, n = 15) |> 
   ungroup() |> 
   # Make the words an ordered factor so they plot in order
   mutate(word = fct_inorder(word))
@@ -232,7 +291,7 @@ We can also look at pairs of words instead of single words. To do this, we need 
 tragedies_bigrams <- tragedies_raw |> 
   drop_na(text) |> 
   # n = 2 here means bigrams. We could also make trigrams (n = 3) or any type of n-gram
-  unnest_tokens(bigram, text, token = "ngrams", n = 2) |> 
+  unnest_tokens(output = bigram, input = text, token = "ngrams", n = 2) |> 
   # Get rid of NAs in the new bigram column
   drop_na(bigram) |> 
   # Split the bigrams into two words so we can remove stopwords
@@ -250,7 +309,7 @@ top_bigrams <- tragedies_bigrams |>
   count(title, bigram, sort = TRUE) |> 
   # Keep top 15 in each play
   group_by(title) |> 
-  top_n(15) |> 
+  slice_max(n, n = 10) |> 
   ungroup() |> 
   # Make the bigrams an ordered factor so they plot in order
   mutate(bigram = fct_inorder(bigram))
@@ -288,7 +347,7 @@ pronouns <- c("he", "she")
 bigram_he_she_counts <- tragedies_raw |>
   drop_na(text) |> 
   # Split into bigrams
-  unnest_tokens(bigram, text, token = "ngrams", n = 2) |>
+  unnest_tokens(output = bigram, input = text, token = "ngrams", n = 2) |>
   # Find counts of bigrams
   count(bigram, sort = TRUE) |>
   # Split the bigram column into two columns
@@ -307,7 +366,7 @@ word_ratios <- bigram_he_she_counts |>
   # Spread out the word1 column so that there's a column named "he" and one named "she"
   spread(word1, total, fill = 0) |>
   # Add 1 to each number so that logs work (just in case any are zero)
-  mutate_if(is.numeric, ~(. + 1) / sum(. + 1)) |>
+  mutate_if(is.numeric, \(x) (x + 1) / sum(x + 1)) |>
   # Create a new column that is the logged ratio of the she counts to he counts
   mutate(logratio = log2(she / he)) |>
   # Sort by that ratio
@@ -319,7 +378,7 @@ plot_word_ratios <- word_ratios |>
   # only rows where the log ratio is bigger than 0, and then take the top 15 words
   mutate(abslogratio = abs(logratio)) |>
   group_by(logratio < 0) |>
-  top_n(15, abslogratio) |>
+  slice_max(abslogratio, n = 15) |> 
   ungroup() |>
   mutate(word = reorder(word2, logratio)) 
 
@@ -361,9 +420,9 @@ Here are the most unique words in these four tragedies, compared to all the trag
 tragedy_words <- tragedies_raw |> 
   drop_na() |> 
   # Split into word tokens
-  unnest_tokens(word, text) |> 
+  unnest_tokens(output = word, input = text) |> 
   # Remove stop words and old timey words
-  anti_join(stop_words) |> 
+  anti_join(stop_words, by = join_by(word)) |> 
   filter(!word %in% c("thou", "thy", "haue", "thee", 
                       "thine", "enter", "exeunt", "exit")) |> 
   count(title, word, sort = TRUE)
@@ -376,7 +435,7 @@ tragedy_tf_idf <- tragedy_words |>
 tragedy_tf_idf_plot <- tragedy_tf_idf |> 
   arrange(desc(tf_idf)) |> 
   group_by(title) |> 
-  top_n(10) |> 
+  slice_max(tf_idf, n = 10) |> 
   ungroup() |> 
   mutate(word = fct_inorder(word))
 
@@ -385,7 +444,7 @@ ggplot(tragedy_tf_idf_plot,
   geom_col() +
   guides(fill = "none") +
   labs(x = "tf-idf", y = NULL) +
-  facet_wrap(~ title, scales = "free") +
+  facet_wrap(vars(title), scales = "free") +
   theme_bw()
 ```
 
@@ -411,15 +470,15 @@ Here we split the Shakespearean tragedies into words, join a sentiment dictionar
 tragedy_words <- tragedies_raw |> 
   drop_na() |> 
   # Split into word tokens
-  unnest_tokens(word, text) |> 
+  unnest_tokens(output = word, input = text) |> 
   # Remove stop words and old timey words
-  anti_join(stop_words) |> 
+  anti_join(stop_words, by = join_by(word)) |> 
   filter(!word %in% c("thou", "thy", "haue", "thee", 
                       "thine", "enter", "exeunt", "exit"))
 
 # Join the sentiment dictionary 
 tragedy_sentiment <- tragedy_words |> 
-  inner_join(get_sentiments("bing"), relationship = "many-to-many")
+  inner_join(get_sentiments("bing"), by = join_by(word), relationship = "many-to-many")
 tragedy_sentiment
 ```
 
@@ -504,7 +563,7 @@ little_women_to_tag <- little_women |>
   ungroup() |> 
   # Look at each individual cell full of text lines and paste them together into
   # one really long string of text per chapter
-  mutate(text = map_chr(data, ~paste(.$text, collapse = " "))) |> 
+  mutate(text = map_chr(data, \(x) paste(x$text, collapse = " "))) |> 
   # Get rid of this column
   select(-data)
 little_women_to_tag
