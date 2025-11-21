@@ -1,5 +1,37 @@
 # This file is generated with data/extract-news-headings.R; do not edit by hand
 
+- title: "Week 12 FAQs"
+  categories:
+  - "FAQs"
+  date_actual: '1763677680'
+  date: "2025-11-20T22:28:00"
+  href: "/news/2025-11-20_faqs_week-12.html"
+  headings:
+  - id: "can-we-make-interactive-maps-with-r"
+    text: "Can we make interactive maps with R?"
+  - id: "why-do-we-use-an-empty-ggplot-call-for-these-functions"
+    text: "Why do we use an empty <code>ggplot()</code> call for these functions?"
+  - id: "whats-the-difference-between-a-tibble-and-a-tribble"
+    text: "What’s the difference between a tibble and a tribble?"
+  - id: "how-many-decimal-points-should-i-use-when-im-working-with-latitude-and-longitude"
+    text: "How many decimal points should I use when I’m working with latitude and
+      longitude?"
+  - id: "can-i-use-geom_label_repel-with-maps"
+    text: "Can I use <code>geom_label_repel()</code> with maps?"
+  - id: "i-tried-using-nudge_x-to-move-a-label-on-the-map-and-it-didnt-movewhy"
+    text: "I tried using <code>nudge_x</code> to move a label on the map and it didn’t
+      move—why?"
+  - id: "can-i-use-a-heatmap-on-a-map"
+    text: "Can I use a heatmap on a map?"
+  - id: "i-tried-to-make-a-map-and-countries-are-missingwhy"
+    text: "I tried to make a map and countries are missing—why?"
+  - id: "i-tried-to-make-a-map-of-just-europe-and-it-includes-more-than-just-europe"
+    text: "I tried to make a map of just Europe and it includes more than just Europe?"
+  - id: "can-we-do-geographic-calculations-with-sf-like-can-we-replace-arcgis-with-r-and-sf"
+    text: "Can we do geographic calculations with {sf}? Like, can we replace ArcGIS
+      with R and {sf}?"
+  - id: "saving-data-that-takes-a-long-time-to-make"
+    text: "Saving data that takes a long time to make"
 - title: "Grades, zeroes, and ✓−s in the gradebook"
   categories:
   - "course details"

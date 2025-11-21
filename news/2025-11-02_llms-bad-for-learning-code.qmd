@@ -91,7 +91,7 @@ I created that image by going to ChatGPT and typing this:
 > Generate an infographic based on the gapminder dataset from R that has three plot types—a map, a scatterplot, and a bar chart. Give it some sort of title and short description in the subtitle, and a caption and use a good color scheme and make the background of the image fancy with a subtle gradient. Add some arrows and text boxes to annotate interesting things. Make sure each subplot has an informative title.
 :::
 
-At a *very* quick glance, that looks like a plausible image. But holy crap it falls apart fast, both comically and tragically. Comically because, like, look at the y-axis in the scatterplot; or the x-axis ticks in the population grown chart that are sometimes spaced every 20 years, sometimes every 10 years, and has 1980 there twice; or the weird blobs in the map.
+At a *very* quick glance, that looks like a plausible image. But holy crap it falls apart fast, both comically and tragically. Comically because, like, look at the y-axis in the scatterplot; or the x-axis ticks in the population growth chart that are sometimes spaced every 20 years, sometimes every 10 years, and has 1980 there twice; or the weird blobs in the map.
 
 Tragically—and most importantly—literally nothing in this image is real and none of the annotations make sense and none of the colors make sense and everything here is completely meaningless and devoid of any information. It's pure philosophical bullshit—an image "produced without concern for its truth."
 
