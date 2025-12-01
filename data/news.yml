@@ -1,5 +1,25 @@
 # This file is generated with data/extract-news-headings.R; do not edit by hand
 
+- title: "What's next?"
+  categories:
+  - "advice"
+  date_actual: '1764581340'
+  date: "2025-12-01T09:29:00"
+  href: "/news/2025-12-01_whats-next.html"
+  headings:
+  - id: "policy-analytics-concentration-and-certificate"
+    text: "Policy analytics concentration and certificate"
+  - id: "program-evaluation"
+    text: "Program Evaluation"
+  - id: "governance-around-the-world"
+    text: "Governance Around the World"
+- title: "Class website future"
+  categories:
+  - "course details"
+  date_actual: '1764579780'
+  date: "2025-12-01T09:03:00"
+  href: "/news/2025-12-01_website-future.html"
+  headings: []
 - title: "Week 12 FAQs"
   categories:
   - "FAQs"
