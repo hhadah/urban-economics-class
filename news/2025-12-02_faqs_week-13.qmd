@@ -21,7 +21,7 @@ So many of you asked some variation of this! You learned about visualizing time 
 
 As with everything in this class, there's no right answer!
 
-There are lots of different ways to show time and there's no specific "time only" kind of plot. Check the [list of visualiztion flowchart guides here](/resource/visualization.qmd#how-to-select-the-appropriate-chart-type)—there's one there [specifically for time](https://flowingdata.com/2010/01/07/11-ways-to-visualize-changes-over-time-a-guide).
+There are lots of different ways to show time and there's no specific "time only" kind of plot. Check the [list of visualization flowchart guides here](/resource/visualization.qmd#how-to-select-the-appropriate-chart-type)—there's one there [specifically for time](https://flowingdata.com/2010/01/07/11-ways-to-visualize-changes-over-time-a-guide).
 
 All that matters is that the visualization helps you tell a story in a truthful, understandable way.
 
@@ -688,7 +688,7 @@ plot_bars
    )
    ```
 
-   …but only after a bunch of changes. This is what the process looked like (I made this animation with the [neat {camcorder} package](https://thebioengineer.github.io/camcorder/)):
+   …but only after a bunch of changes. This is what the process looked like (I made this animation with the [neat {camcorder} package](https://thebioengineer.github.io/camcorder/)):^[[See the code here](https://github.com/andrewheiss/datavizf25.classes.andrewheiss.com/blob/main/files/inset-recording.R) if you're curious.]
 
    ![](img/inset-placement.gif)
 

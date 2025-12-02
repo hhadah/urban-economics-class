@@ -20,16 +20,16 @@ plot_bars <- penguins |>
   theme(axis.text.x = element_text(face = "bold"))
 
 gg_record(
-  dir = file.path("recording"), # where to save the recording
-  device = "png", # device to use to save images
-  width = 6,      # width of saved image
-  height = 4,     # height of saved image
-  units = "in",   # units for width and height
-  dpi = 600       # dpi to use when saving image
+  dir = file.path("recording"),
+  device = "png",
+  width = 6,
+  height = 4,
+  units = "in",
+  dpi = 600
 )
 
-record_polaroid()
 
+# Make all the plots
 
 plot_main + 
   annotate(
