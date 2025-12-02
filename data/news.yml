@@ -1,5 +1,26 @@
 # This file is generated with data/extract-news-headings.R; do not edit by hand
 
+- title: "Week 13 FAQs"
+  categories:
+  - "FAQs"
+  date_actual: '1764692220'
+  date: "2025-12-02T16:17:00"
+  href: "/news/2025-12-02_faqs_week-13.html"
+  headings:
+  - id: "which-plot-is-the-best-for-visualizing-time"
+    text: "Which plot is the best for visualizing time?"
+  - id: "can-i-visualize-time-with-a-map"
+    text: "Can I visualize time with a map?"
+  - id: "can-we-show-changes-in-time-with-animation"
+    text: "Can we show changes in time with animation?"
+  - id: "getting-the-inset-plot-positioned-correctly-was-trickywhats-the-best-way-to-do-that"
+    text: "Getting the inset plot positioned correctly was tricky—what’s the best
+      way to do that?"
+  - id: "my-subscripted-2-wasnt-appearing-in-my-plot.-can-i-fix-that"
+    text: "My subscripted 2 wasn’t appearing in my plot. Can I fix that?"
+  - id: "whats-the-difference-between-using-by-thing-and-join_bything-with-the-different-join-functions"
+    text: "What’s the difference between using <code>by = &quot;thing&quot;</code>
+      and <code>join_by(&quot;thing&quot;)</code> with the different join functions?"
 - title: "What's next?"
   categories:
   - "advice"
