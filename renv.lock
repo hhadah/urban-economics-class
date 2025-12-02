@@ -1285,45 +1285,6 @@
       "Maintainer": "Kirill Müller <kirill@cynkra.com>",
       "Repository": "CRAN"
     },
-    "blscrapeR": {
-      "Package": "blscrapeR",
-      "Version": "4.0.1",
-      "Source": "Repository",
-      "Type": "Package",
-      "Title": "An API Wrapper for the United States Bureau of Labor Statistics",
-      "Authors@R": "person(\"Kris\", \"Eberwein\", email = \"kris.eberwein@gmail.com\", role = c(\"aut\", \"cre\"))",
-      "Description": "Scrapes various data from <https://www.bls.gov/>. The Bureau of Labor Statistics is the statistical branch of the United States Department of Labor. The package has additional functions to help parse, analyze and visualize the data.",
-      "Depends": [
-        "R (>= 3.5.0)"
-      ],
-      "Imports": [
-        "httr",
-        "jsonlite",
-        "magrittr",
-        "utils",
-        "stats",
-        "dplyr",
-        "purrr",
-        "tibble",
-        "stringr"
-      ],
-      "Suggests": [
-        "testthat",
-        "knitr",
-        "rmarkdown"
-      ],
-      "License": "MIT + file LICENSE",
-      "URL": "https://github.com/keberwein/blscrapeR",
-      "BugReports": "https://github.com/keberwein/blscrapeR/issues",
-      "LazyData": "true",
-      "VignetteBuilder": "knitr",
-      "RoxygenNote": "7.2.3",
-      "NeedsCompilation": "no",
-      "Author": "Kris Eberwein [aut, cre]",
-      "Maintainer": "Kris Eberwein <kris.eberwein@gmail.com>",
-      "Repository": "CRAN",
-      "Encoding": "UTF-8"
-    },
     "bookdown": {
       "Package": "bookdown",
       "Version": "0.43",
