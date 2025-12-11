@@ -1,5 +1,58 @@
 # This file is generated with data/extract-news-headings.R; do not edit by hand
 
+- title: "Week 15 FAQs"
+  categories:
+  - "FAQs"
+  date_actual: '1765362960'
+  date: "2025-12-10T10:36:00"
+  href: "/news/2025-12-10_faqs_week-15.html"
+  headings:
+  - id: "what-kind-of-communities-can-i-follow-online-to-keep-up-with-this-r-stuff"
+    text: "What kind of communities can I follow online to keep up with this R stuff?"
+  - id: "who-in-the-r-and-dataviz-world-should-i-be-following"
+    text: "Who in the R and dataviz world should I be following?"
+  - id: "will-r-ever-be-fully-replaced-by-ai"
+    text: "Will R ever be fully replaced by AI?"
+  - id: "will-you-incorporate-llms-and-ai-prompting-into-the-course-in-the-future"
+    text: "Will you incorporate LLMs and AI prompting into the course in the future?"
+  - id: "why-wont-you-incorporate-llms-and-ai-prompting-into-the-course"
+    text: "Why won’t you incorporate LLMs and AI prompting into the course?"
+- title: "Week 14 FAQs"
+  categories:
+  - "FAQs"
+  date_actual: '1765285920'
+  date: "2025-12-09T13:12:00"
+  href: "/news/2025-12-09_faqs_week-14.html"
+  headings:
+  - id: "why-didnt-the-number-of-words-in-my-all_words-dataset-match-what-you-had-in-the-instructions"
+    text: "Why didn’t the number of words in my <code>all_words</code> dataset match
+      what you had in the instructions?"
+  - id: "why-did-you-have-us-use-a-tv-script-how-is-this-relevant-to-anything-we-might-ever-do-do-people-use-this-kind-of-text-analysis-and-visualization-in-real-life"
+    text: "Why did you have us use a TV script? How is this relevant to anything we
+      might ever do? Do people use this kind of text analysis and visualization in
+      real life?"
+  - id: "whats-the-difference-between-geom_pointrange-and-geom_segment-geom_point"
+    text: "What’s the difference between <code>geom_pointrange()</code> and <code>geom_segment()
+      + geom_point()</code>?"
+  - id: "sometimes-when-i-render-my-document-i-get-pages-of-code-in-addition-to-the-outputwhy-and-how-do-i-stop-it"
+    text: "Sometimes when I render my document I get pages of code in addition to
+      the output—why, and how do I stop it?"
+  - id: "whats-the-best-way-to-add-words-like-season-to-the-facet-titles"
+    text: "What’s the best way to add words like  to the facet titles?"
+  - id: "some-of-the-words-in-my-word-frequencytf-idf-plot-were-out-of-orderhow-can-i-fix-that"
+    text: "Some of the words in my word frequency/tf-idf plot were out of order—how
+      can I fix that?"
+  - id: "cleaning-up-text-is-always-specific-and-specialized"
+    text: "Cleaning up text is <em>always</em> specific and specialized"
+  - id: "i-tried-filtering-out-words-like-im-and-they-didnt-filterwhy-not"
+    text: "I tried filtering out words like <code>i'm</code> and they didn’t filter—why
+      not?"
+  - id: "i-tried-filtering-out-blank-words-with-drop_na-and-it-didnt-workwhy-not"
+    text: "I tried filtering out blank words with <code>drop_na()</code> and it didn’t
+      work—why not?"
+  - id: "is-there-any-way-to-interpet-tf-idf-values-beyond-just-comparing-their-rankings"
+    text: "Is there any way to interpet tf-idf values beyond just comparing their
+      rankings?"
 - title: "Week 13 FAQs"
   categories:
   - "FAQs"
