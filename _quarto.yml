@@ -4,11 +4,31 @@ project:
     - index.qmd
     - syllabus.qmd
     - schedule.qmd
+    - news_feed.qmd
     - lectures/index.qmd
     - labs/index.qmd
-    - homework/index.qmd
+    - homework/*.qmd
     - project/index.qmd
+    - content/*.qmd
+    - lesson/*.qmd
+    - example/*.qmd
+    - assignment/*.qmd
+    - news/*.qmd
     - resource/index.qmd
+    - resource/ai-bs.qmd
+    - resource/citations.qmd
+    - resource/colors.qmd
+    - resource/data.qmd
+    - resource/design.qmd
+    - resource/graphics-editors.qmd
+    - resource/install.qmd
+    - resource/markdown.qmd
+    - resource/pipes.qmd
+    - resource/quarto.qmd
+    - resource/r.qmd
+    - resource/style.qmd
+    - resource/unzipping.qmd
+    - resource/visualization.qmd
     - 404.qmd
   resources:
     - "files/"

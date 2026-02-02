@@ -323,7 +323,7 @@ b) Calculate the new consumer-voter C surplus under the assumption of different 
 
 # Racial Dissimilarity Index in Chicago Metro Area [30 points]
 
-To see the current standard of racial separation in Chicago's Neighborhoods, one can look at the American Community Survey data (2014-2018) [here](https://github.com/guerramarcelino/UrbanEconomics/raw/master/Datasets/chi_metro.RDS). In this file, you have the estimated black, white, and total population of 2,184 census tracts within Chicago's metro area - a zone that comprehends 14 counties in Illinois, Indiana, and Wisconsin. Using the provided data, calculate whites and blacks' shares in each census tract (you want to store this information in a new column).
+To see the current standard of racial separation in Chicago's Neighborhoods, one can look at the American Community Survey data (2014-2018) [here](/files/data/urban-econ/chi_metro.RDS). In this file, you have the estimated black, white, and total population of 2,184 census tracts within Chicago's metro area - a zone that comprehends 14 counties in Illinois, Indiana, and Wisconsin. Using the provided data, calculate whites and blacks' shares in each census tract (you want to store this information in a new column).
 
 ## Ghetto Neighborhoods [10 points]
 

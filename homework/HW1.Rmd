@@ -37,7 +37,7 @@ background-color: #CCDDFF;
 
 ## 1 Importing and merging datasets [10 points]
 
-In this homework, we'll adapt data from Chicago-IL communities. The original source is the [GeoDa Data and Lab](https://geodacenter.github.io/data-and-lab/). The first dataset [Airbnb.RDS](https://github.com/guerramarcelino/UrbanEconomics/raw/master/Datasets/airbnb.RDS) refers to Airbnb rentals, socioeconomic indicators, and crime by community area in Chicago. The [Communities.xls](https://github.com/guerramarcelino/UrbanEconomics/raw/master/Datasets/communities.xls) dataset contains health and socioeconomic indicators for the 77 community areas of Chicago, 2012-2014. 
+In this homework, we'll adapt data from Chicago-IL communities. The original source is the [GeoDa Data and Lab](https://geodacenter.github.io/data-and-lab/). The first dataset [Airbnb.RDS](/files/data/urban-econ/airbnb.RDS) refers to Airbnb rentals, socioeconomic indicators, and crime by community area in Chicago. The [Communities.xls](/files/data/urban-econ/communities.xls) dataset contains health and socioeconomic indicators for the 77 community areas of Chicago, 2012-2014. 
 
 a. Import both datasets and use the function `head()` to see only the first five rows from each one. [This](https://readxl.tidyverse.org/) might help you to import the `Communities` data.   
 

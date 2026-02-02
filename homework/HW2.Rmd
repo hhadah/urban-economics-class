@@ -228,7 +228,7 @@ You already know that one of the predictions of the Monocentric City Model with 
 
 **ii)** What do you see in the neighborhoods close to the Navy Pier? Does the model have an explanation for this pattern? 
 
-**iii)** [Here](https://github.com/guerramarcelino/UrbanEconomics/raw/master/Datasets/chi_inc.RDS) you have ACS 2015-19 data about the percentage of people living below the poverty line in census tracts within Chicago metro area. Let's take a look at the relationship between poverty levels and distance from the city center constructing a scatter plot with those variables (y-axis `perc_pov` and x-axis `dist_km`). What do you see? Does that make sense/agree with your answer in **i)**?
+**iii)** [Here](/files/data/urban-econ/chi_inc.RDS) you have ACS 2015-19 data about the percentage of people living below the poverty line in census tracts within Chicago metro area. Let's take a look at the relationship between poverty levels and distance from the city center constructing a scatter plot with those variables (y-axis `perc_pov` and x-axis `dist_km`). What do you see? Does that make sense/agree with your answer in **i)**?
 
 
 

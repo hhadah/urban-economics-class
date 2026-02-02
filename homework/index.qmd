@@ -4,10 +4,19 @@ title: "Homework"
 
 Homework assignments will be posted here with instructions, templates, and due dates.
 
-## Assignments
+## Homework list
 
-- Homework 1 ([HTML](HW1.html), [Rmd](HW1.Rmd))
-- Homework 2 ([HTML](HW2.html), [Rmd](HW2.Rmd))
-- Homework 3 ([HTML](HW3.html), [Rmd](HW3.Rmd))
-- Homework 4 ([HTML](HW4.html), [Rmd](HW4.Rmd))
-- Homework 5 ([HTML](HW5.html), [Rmd](HW5.Rmd))
+```{listing}
+contents:
+  - "*.qmd"
+  - "!index.qmd"
+sort: "title"
+type: table
+fields: [title]
+```
+
+## Data downloads
+
+All homework datasets are available on the course website:
+
+- [Urban Economics datasets](/files/data/urban-econ/)

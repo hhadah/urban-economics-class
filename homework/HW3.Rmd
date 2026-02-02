@@ -101,7 +101,7 @@ rect(0,0, 80, 50)
 
 ## The decline of manufacturing jobs [20 points]
 
-In this question, we want to take a closer look at the manufacturing sector in the U.S. economy. This [data](https://github.com/guerramarcelino/UrbanEconomics/raw/master/Datasets/manufacturing.xls) from FRED contains all employees in the NONFARM sector from 1939 to 2020 (column PAYEMS), and all employees in the manufacturing sector (MANEMP) in thousands of persons. 
+In this question, we want to take a closer look at the manufacturing sector in the U.S. economy. This [data](/files/data/urban-econ/manufacturing.xls) from FRED contains all employees in the NONFARM sector from 1939 to 2020 (column PAYEMS), and all employees in the manufacturing sector (MANEMP) in thousands of persons. 
 
 First, compute the ratio of MANEMP/PAYEMS and store that as a column named `share`. After that, construct **two line plots** with i) the `share` manufacturing jobs/Total jobs in the NONFARM sector and ii) the total number of manufacturing jobs from 1939 to 2020. 
 

@@ -85,7 +85,7 @@ e) Assume that the mayor wants to avoid congestion at the rush-hour imposing the
 *Hint*: compare the total commuting costs between the scenario where there are $T_{opt}$ cars with the one that has 500 cars.  
 
 ## Commuting Time in the U.S. [15 points]
-Let's find out where are America's longest and fastest travel times to work. [Here](https://github.com/guerramarcelino/UrbanEconomics/raw/master/Datasets/commute.rar) you have a shapefile that contains the average commute time per U.S. county (excluding Hawaii and Alaska) based on the American Community Survey 2014-18. What are the top five and bottom five counties in terms of commute time? What is America's average travel time to work? Finally, map the spatial distribution of commuting to work in U.S. counties.
+Let's find out where are America's longest and fastest travel times to work. [Here](/files/data/urban-econ/commute.rar) you have a shapefile that contains the average commute time per U.S. county (excluding Hawaii and Alaska) based on the American Community Survey 2014-18. What are the top five and bottom five counties in terms of commute time? What is America's average travel time to work? Finally, map the spatial distribution of commuting to work in U.S. counties.
 
 
 \newpage
@@ -94,7 +94,7 @@ Let's find out where are America's longest and fastest travel times to work. [He
 
 ## Vanilla Version of Hedonic Regression [15 points]
 
-Using this `.RDS` [data](https://github.com/guerramarcelino/UrbanEconomics/raw/master/Datasets/kings_sales.RDS) on house sales in King County-WA (May-Dec 2014), estimate a [hedonic regression](https://guerramarcelino.github.io/Econ414/Lectures/Lec9/lec9?panelset=r-code#6) using the `lm()` function - you can find the original dataset [here](https://geodacenter.github.io/data-and-lab/KingCounty-HouseSales2015/). The dependent variable is `price`, and all the other columns (besides GEOID and id) are treated as explanatory variables. First, run the regression with only house characteristics (everything but med_inc, popdens14, bach_share, and owner_share) and answer the following: 
+Using this `.RDS` [data](/files/data/urban-econ/kings_sales.RDS) on house sales in King County-WA (May-Dec 2014), estimate a [hedonic regression](https://guerramarcelino.github.io/Econ414/Lectures/Lec9/lec9?panelset=r-code#6) using the `lm()` function - you can find the original dataset [here](https://geodacenter.github.io/data-and-lab/KingCounty-HouseSales2015/). The dependent variable is `price`, and all the other columns (besides GEOID and id) are treated as explanatory variables. First, run the regression with only house characteristics (everything but med_inc, popdens14, bach_share, and owner_share) and answer the following: 
 
 a) What is the implicit price of `number of bathrooms`? 
 
@@ -133,7 +133,7 @@ b) Suppose $\lambda$ increases to 0.40. What is the new $\hat{\tau}$? Give an in
 
 One way to map where innovation happens is to look at the number of patents per residents. Of course, this is an imperfect measure of innovation since not all new ideas are patented, and not all patents turn into valuable innovations. That said, we are going to use patents per residents as a proxy of innovative activity, and we consider tech-hubs the areas with a high/very-high number of patents per capita.
 
-The United States Patent and Trademark Office provides a [periodic tabulation of patent data](https://www.uspto.gov/web/offices/ac/ido/oeip/taf/countyall/usa_county_gd.htm), and you can find this information in a `.RDS` file [here](https://github.com/guerramarcelino/UrbanEconomics/raw/master/Datasets/patentsUS).
+The United States Patent and Trademark Office provides a [periodic tabulation of patent data](https://www.uspto.gov/web/offices/ac/ido/oeip/taf/countyall/usa_county_gd.htm), and you can find this information in a `.RDS` file [here](/files/data/urban-econ/patentsUS).
 
 ## Patents per 100,000 population [10 points]
 
