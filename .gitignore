@@ -21,3 +21,6 @@ projects/*.zip
 typst-pdf-stuff/*.pdf
 
 **/*.quarto_ipynb
+
+# Large external datasets
+files/data/external_data/Rat_Sightings.csv

@@ -1,6 +1,6 @@
 ---
 title: "Dataviz with ggplot2"
-author: "Marcelino Guerra"
+author: "Hussain Hadah"
 date: "Last update: 2/4/2021"
 abstract: Lecture notes on how to make line plots and scatter plots with ggplot2, and an exercise with tidycensus.  
 output: 

@@ -1,6 +1,6 @@
 ---
 title: "Mapping data with tmap"
-author: "Marcelino Guerra"
+author: "Hussain Hadah"
 date: "Last update: 3/2/2020"
 abstract: Lecture notes on how to read shapefiles and make maps using the tmap package.
 output: 
