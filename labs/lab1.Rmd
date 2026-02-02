@@ -1,6 +1,6 @@
 ---
 title: "Intro to tidyverse"
-author: "Marcelino Guerra"
+author: "Hussain Hadah"
 date: "Last update: 01/27/2021"
 abstract: Lecture notes on how to import files, merge, filter and summarize datasets.
 output: 

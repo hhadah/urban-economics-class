@@ -6,8 +6,8 @@ Homework assignments will be posted here with instructions, templates, and due d
 
 ## Assignments
 
-- Homework 1 ([HTML](HW1.html), [Rmd](HW1_mguerra3.Rmd))
-- Homework 2 ([HTML](HW2.html), [Rmd](HW2_mguerra3.Rmd))
-- Homework 3 ([HTML](HW3.html), [Rmd](HW3_mguerra3.Rmd))
-- Homework 4 ([HTML](HW4.html), [Rmd](HW4_mguerra3.Rmd))
-- Homework 5 ([HTML](HW5.html), [Rmd](HW5_mguerra3.Rmd))
+- Homework 1 ([HTML](HW1.html), [Rmd](HW1.Rmd))
+- Homework 2 ([HTML](HW2.html), [Rmd](HW2.Rmd))
+- Homework 3 ([HTML](HW3.html), [Rmd](HW3.Rmd))
+- Homework 4 ([HTML](HW4.html), [Rmd](HW4.Rmd))
+- Homework 5 ([HTML](HW5.html), [Rmd](HW5.Rmd))

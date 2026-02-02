@@ -1,6 +1,6 @@
 ---
 title: "Lab Quiz Review"
-author: "Marcelino Guerra"
+author: "Hussain Hadah"
 date: "Last update: 4/5/2020"
 abstract: 
 output: 

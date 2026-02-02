@@ -1,6 +1,6 @@
 ---
 title: "Exploratory Spatial Data Analysis"
-author: "Marcelino Guerra"
+author: "Hussain Hadah"
 date: "Last update: 04/29/2021"
 abstract: Lecture notes on how to calculate Moran's I, and how to construct Moran Scatterplots and LISA maps using R. 
 output: 

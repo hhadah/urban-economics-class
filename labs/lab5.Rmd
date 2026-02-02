@@ -1,6 +1,6 @@
 ---
 title: "Dissimilarity Index"
-author: "Marcelino Guerra"
+author: "Hussain Hadah"
 date: "Last update: 04/20/2021"
 abstract: Lecture notes on how to calculate the Racial Dissimilarity Index. 
 output: 
