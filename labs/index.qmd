@@ -1,0 +1,15 @@
+---
+title: "R Labs"
+---
+
+Lab instructions and datasets will be posted here.
+
+## Labs
+
+- Lab 1: Intro to tidyverse ([HTML](lab1.html), [Rmd](lab1.Rmd))
+- Lab 2: Dataviz with ggplot2 ([HTML](lab2.html), [Rmd](lab2.Rmd))
+- Lab 3: Intro to tidycensus ([HTML](lab3.html), [Rmd](lab3.Rmd))
+- Lab 4: Intro to mapping ([HTML](lab4.html), [Rmd](lab4.Rmd))
+- Lab 5: Racial Dissimilarity Index ([HTML](lab5.html), [Rmd](lab5.Rmd))
+- Lab 6: ESDA ([HTML](lab6.html), [Rmd](lab6.Rmd))
+- Lab review ([HTML](labreview.html), [Rmd](labreview.Rmd))
