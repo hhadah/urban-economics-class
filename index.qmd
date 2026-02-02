@@ -1,8 +1,8 @@
 ---
-title: "Data Visualization"
-subtitle: "Use R, ggplot2, and the principles of graphic design to create beautiful and truthful visualizations of data"
+title: "Urban Economics"
+subtitle: "Cities, housing markets, transportation, and local public policy"
 details: |
-  PMAP 8551/4551 • Fall 2025<br>Andrew Young School of Policy Studies<br>Georgia State University
+  {{< var course.number >}} • {{< var course.semester >}}<br>{{< var school.name >}}<br>{{< var university.name >}}
 sidebar: false
 toc: false
 page-layout: full
@@ -12,14 +12,6 @@ format:
       - html/home/title-block.html
 course-logo: /files/course-icon.png
 ---
-
-```{r set-dependencies, include=FALSE}
-# Site-wide targets dependencies
-withr::with_dir(here::here(), {
-  targets::tar_load(all_zipped_projects)
-  targets::tar_load(all_slides)
-})
-```
 
 ::: {.home}
 
@@ -54,8 +46,10 @@ withr::with_dir(here::here(), {
 
 ::::
 
-```{r echo=FALSE}
-knitr::include_graphics(here::here("files", "img", "dataviz-flowchart.png"), error = FALSE)
-```
+## About this course
+
+Urban economics explains why cities exist, how they grow, and how people and firms sort across space. We will study classic urban models, housing and labor market dynamics, transportation and congestion, neighborhood choice and segregation, and local public finance. Along the way, we will use data to connect theory to real-world patterns.
+
+You can find the syllabus, weekly schedule, lecture notes, labs, and assignments in the navigation bar above.
 
 :::

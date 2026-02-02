@@ -1,0 +1,11 @@
+---
+title: "Final Project"
+---
+
+Final project guidelines and milestones will be posted here.
+
+## What to expect
+
+- Proposal (topic, question, and data plan)
+- Progress update (methods and preliminary results)
+- Final report and presentation

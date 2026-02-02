@@ -1,33 +1,33 @@
-author: Andrew Heiss
+author: Hussain Hadah
 
 instructor:
-  name: Dr. Andrew Heiss
-  name_no_title: Andrew Heiss
-  email: aheiss@gsu.edu
-  url: "https://www.andrewheiss.com"
-  bluesky: "https://bsky.app/profile/andrew.heiss.phd"
-  github: andrewheiss
-  office: "55 Park Place NE, Room 464"
+  name: Dr. Hussain Hadah
+  name_no_title: Hussain Hadah
+  email: hussain.hadah@university.edu
+  url: "https://www.example.edu/~hhadah"
+  bluesky: "https://bsky.app/profile/hussain-hadah"
+  github: hhadah
+  office: "TBD"
   contact_policy: >-
-    E-mail and Discord are the best ways to get in contact with me. I will try to respond to all course-related e-mails and Discord messages within 24 hours (*really*), but also remember that life can be busy and chaotic for everyone (including me!), so if I don't respond right away, don't worry!
-  appointment_url: https://calendly.com/andrewheiss/
+    E-mail is the best way to reach me. I will respond to course-related messages within 24–48 hours during the work week.
+  appointment_url: https://calendly.com/hussain-hadah/
 
 course:
-  number: "PMAP 8551/4551"
-  semester: "Fall 2025"
-  days: "Any day"
-  time: "Asynchronous"
-  location: "Anywhere"
-  dates: "August 25–December 15, 2025"
-  github: "https://www.github.com/andrewheiss/datavizf25.classes.andrewheiss.com"
-  url: "https://datavizf25.classes.andrewheiss.com"
-  copyright_year: "2025"
-  discord: "https://discord.com/"
+  number: "ECON 414"
+  semester: "Spring 2026"
+  days: "TBD"
+  time: "TBD"
+  location: "TBD"
+  dates: "TBD"
+  github: "https://github.com/hhadah/urban-economics-class"
+  url: "https://hhadah.github.io/urban-economics-class"
+  copyright_year: "2026"
+  discord: "https://discord.gg/your-invite"
 
 university:
-  name: Georgia State University
-  url: "https://www.gsu.edu"
+  name: Your University
+  url: "https://www.example.edu"
 
 school:
-  name: Andrew Young School of Policy Studies
-  url: "https://aysps.gsu.edu/"
+  name: Department of Economics
+  url: "https://www.example.edu/economics"
