@@ -1,11 +1,115 @@
 ---
-title: Readings, lectures, and videos
+title: "Content"
 ---
 
-Each class session has a set of required readings that you should complete ***before*** watching the lecture or working through the lesson. 
+Find weekly materials below. Each week includes slides, lecture notes, lessons, labs, and supporting media from the schedule.
 
-Every class session also has a YouTube playlist of short recorded videos for each of the lecture sections. The lecture slides are special HTML files made with the R package [{xaringan}](https://bookdown.org/yihui/rmarkdown/xaringan.html) (R can do so much!). On each class session page you'll buttons for opening the presentation in a new tab or for downloading a PDF of the slides in case you want to print them or store them on your computer:
+### [Week 1: Syllabus Day & Stylized Facts of Cities](./01-content.html)
 
-<p class="buttons" style="text-align:center;"><span class="btn btn-danger">{{< fa arrow-up-right-from-square >}} View all slides in new window</span> <span class="btn btn-danger">{{< fa file-pdf >}} Download PDF of all slides</span></p>
+- Lecture notes
+- Slides
+- Lesson
+- R labs
+- Readings
 
-The slides are also embedded on each page. You can click in the slides and navigate through them with <kbd>←</kbd> and <kbd>→</kbd>. If you type <kbd>?</kbd> (or <kbd>shift</kbd> + <kbd>/</kbd>) while viewing the slides you can see a list of slide-specific commands (like <kbd>f</kbd> for fullscreen or <kbd>p</kbd> for presenter mode if you want to see my notes).
+### [Week 2: Agglomeration Forces](./02-content.html)
+
+- Lecture notes
+- Slides
+- Lesson
+- R labs
+- Readings
+- Videos
+
+### [Week 3: Monocentric City Model I](./03-content.html)
+
+- Lecture notes
+- Slides
+- Lesson
+- Readings
+
+### [Week 4: Monocentric City Model II & Regulation](./04-content.html)
+
+- Lecture notes
+- Slides
+- Lesson
+- Readings
+- Videos
+
+### [Week 5: Growing and Declining Cities & The Great Divergence](./05-content.html)
+
+- Lecture notes
+- Slides
+- Lesson
+- R labs
+- Readings
+- Videos
+
+### [Week 6: Spatial Equilibrium Across Cities](./06-content.html)
+
+- Lecture notes
+- Slides
+- Lesson
+- R labs
+- Readings
+
+### [Week 7: Midterm Week](./07-content.html)
+
+- Lesson
+
+### [Week 8: Urban Transportation](./08-content.html)
+
+- Lecture notes
+- Slides
+- Lesson
+- Readings
+- Videos
+
+### [Week 9: Housing](./09-content.html)
+
+- Lecture notes
+- Slides
+- Lesson
+- Readings
+- Podcasts
+- Videos
+
+### [Week 10: Local Government](./10-content.html)
+
+- Lecture notes
+- Slides
+- Lesson
+- Videos
+
+### [Week 11: Lab Quiz Week](./11-content.html)
+
+- Lesson
+- R labs
+
+### [Week 12: Neighborhood Choice](./12-content.html)
+
+- Lecture notes
+- Slides
+- Lesson
+- R labs
+- Readings
+- Videos
+
+### [Week 13: Neighborhood Effects](./13-content.html)
+
+- Lecture notes
+- Slides
+- Lesson
+- Readings
+- Podcasts
+- Videos
+
+### [Week 14: Exploratory Spatial Data Analysis (ESDA)](./14-content.html)
+
+- Lecture notes
+- Slides
+- Lesson
+- R labs
+- Readings
+- Podcasts
+- Videos

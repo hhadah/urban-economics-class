@@ -13,28 +13,44 @@ $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
 $black:    #000 !default;
 
-// Plasma colors
-// viridisLite::viridis(7, option = "plasma", begin = 0, end = 0.9)
+// Northwestern brand colors (primary palette)
+$northwestern-purple:     #4E2A84 !default;
+$northwestern-purple-60:  #836EAA !default;
+$northwestern-purple-30:  #B6ACD1 !default;
+$northwestern-purple-10:  #E4E0EE !default;
 
-// Viridis colors
-// viridisLite::viridis(6, option = "viridis", begin = 0, end = 1)
-$blue:   #0D0887 !default;  // Plasma[1]
-$indigo: #5601A4 !default;  // Plasma[2]
-$purple: #900DA4 !default;  // Plasma[3]
-$pink:   #BF3984 !default;  // Plasma[4]
-$red:    #E16462 !default;  // Plasma[5]
-$orange: #F89441 !default;  // Plasma[6]
-$yellow: #FCCE25 !default;  // Plasma[7]
-$green:  #7AD151 !default;  // Viridis[5]
-$teal:   #2A788E !default;  // Viridis[3]
-$cyan:   #22A884 !default;  // Viridis[4]
+// Northwestern secondary palette
+$northwestern-bright-green:  #58B947 !default;
+$northwestern-bright-teal:   #7FCECD !default;
+$northwestern-bright-blue:   #5091CD !default;
+$northwestern-bright-yellow: #EDE93B !default;
+$northwestern-yellow:        #FFC520 !default;
+$northwestern-red:           #EF553F !default;
 
-$primary:       $red !default;
-$secondary:     $gray-500 !default;
-$success:       $green !default;
-$info:          $pink !default;
-$warning:       $yellow !default;
-$danger:        $orange !default;
+$northwestern-dark-green:  #008656 !default;
+$northwestern-dark-teal:   #007FA4 !default;
+$northwestern-dark-blue:   #0D2D6C !default;
+$northwestern-dark-yellow: #D9C826 !default;
+$northwestern-dark-orange: #CA7C1B !default;
+$northwestern-dark-red:    #D85820 !default;
+
+$blue:   $northwestern-bright-blue !default;
+$indigo: $northwestern-purple-60 !default;
+$purple: $northwestern-purple !default;
+$pink:   $northwestern-purple-30 !default;
+$red:    $northwestern-red !default;
+$orange: $northwestern-dark-orange !default;
+$yellow: $northwestern-yellow !default;
+$green:  $northwestern-bright-green !default;
+$teal:   $northwestern-bright-teal !default;
+$cyan:   $northwestern-dark-teal !default;
+
+$primary:       $northwestern-purple !default;
+$secondary:     $northwestern-purple-60 !default;
+$success:       $northwestern-bright-green !default;
+$info:          $northwestern-bright-blue !default;
+$warning:       $northwestern-yellow !default;
+$danger:        $northwestern-red !default;
 $light:         $gray-100 !default;
 $dark:          $gray-800 !default;
 
@@ -56,8 +72,8 @@ $sidebar-font-size: 1.1rem;
 $sidebar-font-size-section: 0.95rem;
 $footer-font-size: 0.95rem;
 
-$link-color: $red;
-$link-hover-color: $yellow;
+$link-color: $northwestern-purple;
+$link-hover-color: $northwestern-purple-60;
 
 // Inline code
 $code-bg: $gray-200 !default;
@@ -157,13 +173,13 @@ ol {
 div.sidebar-item-container .active,
 div.sidebar-item-container .show>.nav-link,
 div.sidebar-item-container .sidebar-link>code{
-  color: $yellow;
+  color: $northwestern-purple-10;
 
 }
 
 .navbar-dark .navbar-nav .nav-link:hover,
 .navbar-dark .navbar-brand:hover {
-  color: $orange;
+  color: $northwestern-purple-30;
 }
 
 
@@ -189,7 +205,7 @@ div.sidebar-item-container .sidebar-link>code{
 // Schedule stuff
 .content-title {
   font-weight: 700;
-  color: $orange;
+  color: $northwestern-purple;
 }
 
 .content-date {

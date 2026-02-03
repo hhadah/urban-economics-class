@@ -6,12 +6,13 @@ project:
     - schedule.qmd
     - news_feed.qmd
     - lectures/index.qmd
+    - content/*.qmd
+    - lectures/*.qmd
     - labs/*.qmd
     - homework/*.qmd
     - project/index.qmd
-    # - content/*.qmd
-    # - lesson/*.qmd
-    # - example/*.qmd
+    - content/*.qmd
+    - lesson/*.qmd
     - assignment/*.qmd
     - news/*.qmd
     - resource/index.qmd
@@ -78,14 +79,14 @@ website:
 
   navbar:
     pinned: true
-    background: "#E16462"
+    background: "#4E2A84"
     right:
       - text: "Home"
         file: index.qmd
       - syllabus.qmd
       - schedule.qmd
-      - text: "Lecture Notes"
-        file: lectures/index.qmd
+      - text: "Content"
+        file: content/index.qmd
       - text: "R Labs"
         file: labs/index.qmd
       - text: "Homework"
@@ -94,6 +95,8 @@ website:
         file: project/index.qmd
       - text: "Resources"
         file: resource/index.qmd
+      - text: "News"
+        file: news_feed.qmd
 
   sidebar:
     - title: "Homework"
@@ -139,11 +142,27 @@ website:
             - text: "Lab Review"
               file: labs/labreview.qmd
 
-    - title: "Lecture Notes"
+    - title: "Content"
       contents:
         - section: "Overview"
           contents:
-            - lectures/index.qmd
+            - content/index.qmd
+        - section: "Weeks"
+          contents:
+            - content/01-content.qmd
+            - content/02-content.qmd
+            - content/03-content.qmd
+            - content/04-content.qmd
+            - content/05-content.qmd
+            - content/06-content.qmd
+            - content/07-content.qmd
+            - content/08-content.qmd
+            - content/09-content.qmd
+            - content/10-content.qmd
+            - content/11-content.qmd
+            - content/12-content.qmd
+            - content/13-content.qmd
+            - content/14-content.qmd
 
     - title: "Resources"
       contents:
