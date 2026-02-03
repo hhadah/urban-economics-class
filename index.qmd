@@ -39,7 +39,6 @@ course-logo: /files/course-icon.png
 ### Contacting me
 
 - [{{< fa calendar-check >}}]{.fa-li} [Schedule an appointment]({{< var instructor.appointment_url >}})
-- [{{< fa brands discord >}}]{.fa-li} [Discord]({{< var course.discord >}})
 
 {{< var instructor.contact_policy >}}
 :::

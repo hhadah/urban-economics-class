@@ -6,12 +6,12 @@ project:
     - schedule.qmd
     - news_feed.qmd
     - lectures/index.qmd
-    - labs/index.qmd
+    - labs/*.qmd
     - homework/*.qmd
     - project/index.qmd
-    - content/*.qmd
-    - lesson/*.qmd
-    - example/*.qmd
+    # - content/*.qmd
+    # - lesson/*.qmd
+    # - example/*.qmd
     - assignment/*.qmd
     - news/*.qmd
     - resource/index.qmd
@@ -46,6 +46,7 @@ project:
 
 execute:
   freeze: auto  # Re-render only when source changes
+  engine: knitr
 
 bibliography: files/bib/readings.bib
 csl: files/bib/chicago-author-date.csl
@@ -57,13 +58,14 @@ website:
 
   draft-mode: unlinked
 
-  favicon: "/files/favicon-512.png"
+  announcement:
+    icon: calendar-check
+    dismissable: true
+    content: "**Welcome!** Check the syllabus and schedule for important dates and deadlines"
+    type: info
+    position: below-navbar
 
-  twitter-card:
-    image: "/files/social-image-f25.png"
-    card-style: summary_large_image
-    creator: "@andrewheiss"
-    # site: "@andrewheiss"
+  favicon: "/files/favicon-512.png"
 
   open-graph:
     image: "/files/social-image-f25.png"
@@ -71,7 +73,7 @@ website:
 
   repo-url: "https://github.com/hhadah/urban-economics-class"
   repo-actions: [source, issue]
-  
+
   page-navigation: true
 
   navbar:
@@ -92,6 +94,84 @@ website:
         file: project/index.qmd
       - text: "Resources"
         file: resource/index.qmd
+
+  sidebar:
+    - title: "Homework"
+      style: "docked"
+      search: false
+      background: light
+      contents:
+        - section: "Overview"
+          contents:
+            - homework/index.qmd
+        - section: "Assignments"
+          contents:
+            - text: "Homework 1"
+              file: homework/01-homework.qmd
+            - text: "Homework 2"
+              file: homework/02-homework.qmd
+            - text: "Homework 3"
+              file: homework/03-homework.qmd
+            - text: "Homework 4"
+              file: homework/04-homework.qmd
+            - text: "Homework 5"
+              file: homework/05-homework.qmd
+
+    - title: "R Labs"
+      contents:
+        - section: "Overview"
+          contents:
+            - labs/index.qmd
+        - section: "Lab Sessions"
+          contents:
+            - text: "Lab 1"
+              file: labs/lab1.qmd
+            - text: "Lab 2"
+              file: labs/lab2.qmd
+            - text: "Lab 3"
+              file: labs/lab3.qmd
+            - text: "Lab 4"
+              file: labs/lab4.qmd
+            - text: "Lab 5"
+              file: labs/lab5.qmd
+            - text: "Lab 6"
+              file: labs/lab6.qmd
+            - text: "Lab Review"
+              file: labs/labreview.qmd
+
+    - title: "Lecture Notes"
+      contents:
+        - section: "Overview"
+          contents:
+            - lectures/index.qmd
+
+    - title: "Resources"
+      contents:
+        - section: "Resources"
+          contents:
+            - resource/index.qmd
+            - resource/ai-bs.qmd
+            - resource/colors.qmd
+            - resource/design.qmd
+            - resource/graphics-editors.qmd
+            - resource/visualization.qmd
+            - resource/r.qmd
+            - resource/style.qmd
+            - resource/data.qmd
+            - resource/citations.qmd
+        - section: "Guides"
+          contents:
+            - resource/install.qmd
+            - resource/markdown.qmd
+            - resource/quarto.qmd
+            - resource/pipes.qmd
+            - resource/unzipping.qmd
+
+    - title: "Final Project"
+      contents:
+        - section: "Overview"
+          contents:
+            - project/index.qmd
 
   page-footer:
     left: |

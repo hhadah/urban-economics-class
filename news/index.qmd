@@ -19,6 +19,7 @@ format:
 ---
 
 ```{r get-vars, include=FALSE}
+install.packages("here")
 base_url <- yaml::read_yaml(here::here("_quarto.yml"))$website$`site-url`
 feed_name <- "news_feed.xml"
 feed_url <- paste0(base_url, "/", feed_name)

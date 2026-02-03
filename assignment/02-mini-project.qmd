@@ -146,6 +146,7 @@ Here are some examples of using different {dplyr} functions to filter, group, an
 #| label: load-data-packages-real
 #| include: false
 
+install.packages("tidyverse")
 library(tidyverse)
 unhcr_refugees <- read_csv(here::here(
   "projects/02-mini-project/data/unhcr_refugees.csv"
@@ -155,7 +156,7 @@ unhcr_refugees <- read_csv(here::here(
 ```{r}
 #| label: load-data-packages-fake
 #| eval: false
-
+install.packages("tidyverse")
 library(tidyverse)
 unhcr_refugees <- read_csv("data/unhcr_refugees.csv")
 ```

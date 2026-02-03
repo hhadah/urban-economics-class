@@ -1,0 +1,4 @@
+# Project-specific build flags for Homebrew libraries
+CPPFLAGS=-I/Users/hhadah/opt/homebrew/opt/gettext/include -I/Users/hhadah/opt/homebrew/opt/freetype/include -I/Users/hhadah/opt/homebrew/opt/freetype/include/freetype2 -I/Users/hhadah/opt/homebrew/include
+LDFLAGS=-L/Users/hhadah/opt/homebrew/opt/gettext/lib -L/Users/hhadah/opt/homebrew/opt/freetype/lib -L/Users/hhadah/opt/homebrew/lib
+PKG_CONFIG_PATH=/Users/hhadah/opt/homebrew/opt/gettext/lib/pkgconfig:/Users/hhadah/opt/homebrew/opt/freetype/lib/pkgconfig

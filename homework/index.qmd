@@ -6,14 +6,7 @@ Homework assignments will be posted here with instructions, templates, and due d
 
 ## Homework list
 
-```{listing}
-contents:
-  - "*.qmd"
-  - "!index.qmd"
-sort: "title"
-type: table
-fields: [title]
-```
+Use the sidebar to navigate to individual homework assignments.
 
 ## Data downloads
 

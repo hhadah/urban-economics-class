@@ -153,6 +153,7 @@ To help myself remember to not include package installation code in my document,
 Ideally, your document shouldn’t have any errors, warnings, or messages in it. Some packages are talkative, like {tidyverse}:
 
 ```{r load-libraries}
+install.packages("tidyverse")
 library(tidyverse)
 ```
 

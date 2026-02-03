@@ -6,20 +6,6 @@ page-layout: full
 freeze: false
 ---
 
-```{r packages-data, include=FALSE}
-library(tidyverse)
-library(knitr)
-library(kableExtra)
-
-withr::with_dir(here::here(), {
-  schedule_nested <- targets::tar_read(schedule_page_data)
-  targets::tar_load(schedule_ical_file)
-})
-
-base_url <- yaml::read_yaml(here::here("_quarto.yml"))$website$`site-url`
-ical_url_absolute <- paste0(base_url, "/", schedule_ical_file)
-```
-
 ::: {.schedule-page}
 
 Here's your roadmap for the semester!
@@ -50,46 +36,387 @@ Here's your roadmap for the semester!
 
 ---
 
-::: {.callout-tip}
+### Week 1: Syllabus Day & Stylized Facts of Cities
 
-## Subscribe!
+<table class="schedule-table table">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Title</th>
+      <th>Content</th>
+      <th>Lesson</th>
+      <th>Example</th>
+      <th>Assignment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="content-date">Week 1</span></td>
+      <td><span class="content-title">Syllabus day</span></td>
+      <td><font color="#e9ecef"><i class="fa-solid fa-book-open-reader fa-lg"></i></font></td>
+      <td><font color="#e9ecef"><i class="fa-solid fa-chalkboard-teacher fa-lg"></i></font></td>
+      <td><font color="#e9ecef"><i class="fa-solid fa-laptop-code fa-lg"></i></font></td>
+      <td><font color="#e9ecef"><i class="fa-solid fa-pen-ruler fa-lg"></i></font></td>
+    </tr>
+    <tr>
+      <td><span class="content-date">Week 1</span></td>
+      <td><span class="content-title">Stylized Urban Facts</span></td>
+      <td><a href="https://guerramarcelino.github.io/Econ414/Lectures/Lec1/lec1"><i class="fa-solid fa-book-open-reader fa-lg"></i></a></td>
+      <td><font color="#e9ecef"><i class="fa-solid fa-chalkboard-teacher fa-lg"></i></font></td>
+      <td><font color="#e9ecef"><i class="fa-solid fa-laptop-code fa-lg"></i></font></td>
+      <td><font color="#e9ecef"><i class="fa-solid fa-pen-ruler fa-lg"></i></font></td>
+    </tr>
+  </tbody>
+</table>
 
-You can subscribe to this calendar URL in Outlook, Google Calendar, or Apple Calendar:
+### Week 2: Agglomeration Forces
 
-::: {.grid}
+<table class="schedule-table table">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Title</th>
+      <th>Content</th>
+      <th>Lesson</th>
+      <th>Example</th>
+      <th>Assignment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="content-date">Week 2</span></td>
+      <td><span class="content-title">Dataviz with ggplot2</span></td>
+      <td><font color="#e9ecef"><i class="fa-solid fa-book-open-reader fa-lg"></i></font></td>
+      <td><font color="#e9ecef"><i class="fa-solid fa-chalkboard-teacher fa-lg"></i></font></td>
+      <td><font color="#e9ecef"><i class="fa-solid fa-laptop-code fa-lg"></i></font></td>
+      <td><font color="#e9ecef"><i class="fa-solid fa-pen-ruler fa-lg"></i></font></td>
+    </tr>
+  </tbody>
+</table>
 
-::: {.g-col-12 .g-col-md-2}
-<p class="download-btn"><a class="btn btn-danger btn-sm" href="/`r schedule_ical_file`" role="button">{{< fa calendar-alt >}} Download</a></p>
-:::
+### Week 3: Monocentric City Model I
 
-::: {.g-col-12 .g-col-md-10}
-<p><input class="form-control" type="text" value="`r ical_url_absolute`" onclick="this.select()" readonly></p>
-:::
+<table class="schedule-table table">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Title</th>
+      <th>Content</th>
+      <th>Lesson</th>
+      <th>Example</th>
+      <th>Assignment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="content-date">Week 3</span></td>
+      <td><span class="content-title">The Monocentric City Model</span></td>
+      <td><a href="https://guerramarcelino.github.io/Econ414/Lectures/Lec3/lec3"><i class="fa-solid fa-book-open-reader fa-lg"></i></a></td>
+      <td><font color="#e9ecef"><i class="fa-solid fa-chalkboard-teacher fa-lg"></i></font></td>
+      <td><font color="#e9ecef"><i class="fa-solid fa-laptop-code fa-lg"></i></font></td>
+      <td><font color="#e9ecef"><i class="fa-solid fa-pen-ruler fa-lg"></i></font></td>
+    </tr>
+  </tbody>
+</table>
 
-:::
+### Week 4: Monocentric City Model II & Regulation
 
-:::
+<table class="schedule-table table">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Title</th>
+      <th>Content</th>
+      <th>Lesson</th>
+      <th>Example</th>
+      <th>Assignment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="content-date">Week 4</span></td>
+      <td><span class="content-title">The Monocentric City Model - Extensions</span></td>
+      <td><a href="https://guerramarcelino.github.io/Econ414/Lectures/Lec4/lec4"><i class="fa-solid fa-book-open-reader fa-lg"></i></a></td>
+      <td><font color="#e9ecef"><i class="fa-solid fa-chalkboard-teacher fa-lg"></i></font></td>
+      <td><font color="#e9ecef"><i class="fa-solid fa-laptop-code fa-lg"></i></font></td>
+      <td><font color="#e9ecef"><i class="fa-solid fa-pen-ruler fa-lg"></i></font></td>
+    </tr>
+  </tbody>
+</table>
 
+### Week 5: Growing and Declining Cities & The Great Divergence
 
-```{r build-table, include=FALSE}
-show_table <- function(group_id) {
-  # Add a heading
-  cat(as.character(paste("\n\n###", schedule_nested$group[[group_id]], "\n\n")))
-  
-  # Make the table
-  tbl <- schedule_nested$data[[group_id]] |> 
-    kbl(escape = FALSE, align = "rlcccc", table.attr = 'class="schedule-table"') |> 
-    kable_styling() |> 
-    column_spec(1, width = "20%", extra_css = "padding-right: 20px;") |> 
-    column_spec(2, width = "48%") |> 
-    column_spec(3:6, width = "8%")
-  
-  cat(tbl)
-}
-```
+<table class="schedule-table table">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Title</th>
+      <th>Content</th>
+      <th>Lesson</th>
+      <th>Example</th>
+      <th>Assignment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="content-date">Week 5</span></td>
+      <td><span class="content-title">Urban Growth and Decline &amp; The Great Divergence</span></td>
+      <td><font color="#e9ecef"><i class="fa-solid fa-book-open-reader fa-lg"></i></font></td>
+      <td><font color="#e9ecef"><i class="fa-solid fa-chalkboard-teacher fa-lg"></i></font></td>
+      <td><font color="#e9ecef"><i class="fa-solid fa-laptop-code fa-lg"></i></font></td>
+      <td><font color="#e9ecef"><i class="fa-solid fa-pen-ruler fa-lg"></i></font></td>
+    </tr>
+  </tbody>
+</table>
 
-```{r show-table, echo=FALSE, results="asis"}
-walk(seq(1, nrow(schedule_nested)), ~show_table(.x))
-```
+### Week 6: Spatial Equilibrium Across Cities
+
+<table class="schedule-table table">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Title</th>
+      <th>Content</th>
+      <th>Lesson</th>
+      <th>Example</th>
+      <th>Assignment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="content-date">Week 6</span></td>
+      <td><span class="content-title">Mapping with tmap</span></td>
+      <td><font color="#e9ecef"><i class="fa-solid fa-book-open-reader fa-lg"></i></font></td>
+      <td><font color="#e9ecef"><i class="fa-solid fa-chalkboard-teacher fa-lg"></i></font></td>
+      <td><font color="#e9ecef"><i class="fa-solid fa-laptop-code fa-lg"></i></font></td>
+      <td><font color="#e9ecef"><i class="fa-solid fa-pen-ruler fa-lg"></i></font></td>
+    </tr>
+  </tbody>
+</table>
+
+### Week 7: Midterm Week
+
+<table class="schedule-table table">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Title</th>
+      <th>Content</th>
+      <th>Lesson</th>
+      <th>Example</th>
+      <th>Assignment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="content-date">Week 7</span></td>
+      <td><span class="content-title">Midterm Week</span></td>
+      <td><font color="#e9ecef"><i class="fa-solid fa-book-open-reader fa-lg"></i></font></td>
+      <td><font color="#e9ecef"><i class="fa-solid fa-chalkboard-teacher fa-lg"></i></font></td>
+      <td><font color="#e9ecef"><i class="fa-solid fa-laptop-code fa-lg"></i></font></td>
+      <td><font color="#e9ecef"><i class="fa-solid fa-pen-ruler fa-lg"></i></font></td>
+    </tr>
+  </tbody>
+</table>
+
+### Week 8: Urban Transportation
+
+<table class="schedule-table table">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Title</th>
+      <th>Content</th>
+      <th>Lesson</th>
+      <th>Example</th>
+      <th>Assignment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="content-date">Week 8</span></td>
+      <td><span class="content-title">Urban Transportation</span></td>
+      <td><font color="#e9ecef"><i class="fa-solid fa-book-open-reader fa-lg"></i></font></td>
+      <td><font color="#e9ecef"><i class="fa-solid fa-chalkboard-teacher fa-lg"></i></font></td>
+      <td><font color="#e9ecef"><i class="fa-solid fa-laptop-code fa-lg"></i></font></td>
+      <td><font color="#e9ecef"><i class="fa-solid fa-pen-ruler fa-lg"></i></font></td>
+    </tr>
+  </tbody>
+</table>
+
+### Week 9: Housing
+
+<table class="schedule-table table">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Title</th>
+      <th>Content</th>
+      <th>Lesson</th>
+      <th>Example</th>
+      <th>Assignment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="content-date">Week 9</span></td>
+      <td><span class="content-title">Housing Demand and Tenure Choice</span></td>
+      <td><font color="#e9ecef"><i class="fa-solid fa-book-open-reader fa-lg"></i></font></td>
+      <td><font color="#e9ecef"><i class="fa-solid fa-chalkboard-teacher fa-lg"></i></font></td>
+      <td><font color="#e9ecef"><i class="fa-solid fa-laptop-code fa-lg"></i></font></td>
+      <td><font color="#e9ecef"><i class="fa-solid fa-pen-ruler fa-lg"></i></font></td>
+    </tr>
+  </tbody>
+</table>
+
+### Week 10: Local Government
+
+<table class="schedule-table table">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Title</th>
+      <th>Content</th>
+      <th>Lesson</th>
+      <th>Example</th>
+      <th>Assignment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="content-date">Week 10</span></td>
+      <td><span class="content-title">Tiebout Model</span></td>
+      <td><a href="https://guerramarcelino.github.io/Econ414/Lectures/Lec11/lec11"><i class="fa-solid fa-book-open-reader fa-lg"></i></a></td>
+      <td><font color="#e9ecef"><i class="fa-solid fa-chalkboard-teacher fa-lg"></i></font></td>
+      <td><font color="#e9ecef"><i class="fa-solid fa-laptop-code fa-lg"></i></font></td>
+      <td><font color="#e9ecef"><i class="fa-solid fa-pen-ruler fa-lg"></i></font></td>
+    </tr>
+  </tbody>
+</table>
+
+### Week 11: Lab Quiz Week
+
+<table class="schedule-table table">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Title</th>
+      <th>Content</th>
+      <th>Lesson</th>
+      <th>Example</th>
+      <th>Assignment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="content-date">Week 11</span></td>
+      <td><span class="content-title">Review Session</span></td>
+      <td><font color="#e9ecef"><i class="fa-solid fa-book-open-reader fa-lg"></i></font></td>
+      <td><font color="#e9ecef"><i class="fa-solid fa-chalkboard-teacher fa-lg"></i></font></td>
+      <td><font color="#e9ecef"><i class="fa-solid fa-laptop-code fa-lg"></i></font></td>
+      <td><font color="#e9ecef"><i class="fa-solid fa-pen-ruler fa-lg"></i></font></td>
+    </tr>
+  </tbody>
+</table>
+
+### Week 12: Neighborhood Choice
+
+<table class="schedule-table table">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Title</th>
+      <th>Content</th>
+      <th>Lesson</th>
+      <th>Example</th>
+      <th>Assignment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="content-date">Week 12</span></td>
+      <td><span class="content-title">Neighborhood Choice</span></td>
+      <td><font color="#e9ecef"><i class="fa-solid fa-book-open-reader fa-lg"></i></font></td>
+      <td><font color="#e9ecef"><i class="fa-solid fa-chalkboard-teacher fa-lg"></i></font></td>
+      <td><font color="#e9ecef"><i class="fa-solid fa-laptop-code fa-lg"></i></font></td>
+      <td><font color="#e9ecef"><i class="fa-solid fa-pen-ruler fa-lg"></i></font></td>
+    </tr>
+  </tbody>
+</table>
+
+### Week 13: Neighborhood Effects
+
+<table class="schedule-table table">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Title</th>
+      <th>Content</th>
+      <th>Lesson</th>
+      <th>Example</th>
+      <th>Assignment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="content-date">Week 13</span></td>
+      <td><span class="content-title">Neighborhood Effects</span></td>
+      <td><font color="#e9ecef"><i class="fa-solid fa-book-open-reader fa-lg"></i></font></td>
+      <td><font color="#e9ecef"><i class="fa-solid fa-chalkboard-teacher fa-lg"></i></font></td>
+      <td><font color="#e9ecef"><i class="fa-solid fa-laptop-code fa-lg"></i></font></td>
+      <td><font color="#e9ecef"><i class="fa-solid fa-pen-ruler fa-lg"></i></font></td>
+    </tr>
+  </tbody>
+</table>
+
+### Week 14: Exploratory Spatial Data Analysis (ESDA)
+
+<table class="schedule-table table">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Title</th>
+      <th>Content</th>
+      <th>Lesson</th>
+      <th>Example</th>
+      <th>Assignment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="content-date">Week 14</span></td>
+      <td><span class="content-title">Exploratory Spatial Data Analysis (ESDA)</span></td>
+      <td><font color="#e9ecef"><i class="fa-solid fa-book-open-reader fa-lg"></i></font></td>
+      <td><font color="#e9ecef"><i class="fa-solid fa-chalkboard-teacher fa-lg"></i></font></td>
+      <td><font color="#e9ecef"><i class="fa-solid fa-laptop-code fa-lg"></i></font></td>
+      <td><font color="#e9ecef"><i class="fa-solid fa-pen-ruler fa-lg"></i></font></td>
+    </tr>
+  </tbody>
+</table>
+
+### Student Photo Challenge
+
+<table class="schedule-table table">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Title</th>
+      <th>Content</th>
+      <th>Lesson</th>
+      <th>Example</th>
+      <th>Assignment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="content-date">TBD</span></td>
+      <td><span class="content-title">Student Photo Challenge</span></td>
+      <td><font color="#e9ecef"><i class="fa-solid fa-book-open-reader fa-lg"></i></font></td>
+      <td><font color="#e9ecef"><i class="fa-solid fa-chalkboard-teacher fa-lg"></i></font></td>
+      <td><font color="#e9ecef"><i class="fa-solid fa-laptop-code fa-lg"></i></font></td>
+      <td><font color="#e9ecef"><i class="fa-solid fa-pen-ruler fa-lg"></i></font></td>
+    </tr>
+  </tbody>
+</table>
 
 :::
