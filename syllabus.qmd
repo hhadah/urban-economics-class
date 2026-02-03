@@ -37,7 +37,7 @@ This syllabus is based on the UrbanEconomics template. Update the dates, weights
 - [{{< fa user >}}]{.fa-li} [{{< var instructor.name >}}]({{< var instructor.url >}})
 - [{{< fa university >}}]{.fa-li} {{< var instructor.office >}}
 - [{{< fa envelope >}}]{.fa-li} <a href='mailto:{{< var instructor.email >}}'>{{< var instructor.email >}}</a>
-- [{{< iconify fa6-brands bluesky size=1.1em title='Bluesky' >}}]{.fa-li} [Bluesky]({{< var instructor.bluesky >}})
+
 :::
 
 ::: {.g-col-12 .g-col-sm-6 .g-col-md-4}
@@ -53,7 +53,7 @@ This syllabus is based on the UrbanEconomics template. Update the dates, weights
 ### Contacting me
 
 - [{{< fa calendar-check >}}]{.fa-li} [Schedule an appointment]({{< var instructor.appointment_url >}})
-- [{{< fa brands discord >}}]{.fa-li} [Course chat]({{< var course.discord >}})
+
 
 {{< var instructor.contact_policy >}}
 :::
