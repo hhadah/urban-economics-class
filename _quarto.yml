@@ -12,8 +12,8 @@ project:
     - homework/*.qmd
     - project/index.qmd
     - content/*.qmd
-    - lesson/*.qmd
-    - assignment/*.qmd
+    # - lesson/*.qmd
+    # - assignment/*.qmd
     - news/*.qmd
     - resource/index.qmd
     - resource/ai-bs.qmd
@@ -55,7 +55,7 @@ csl: files/bib/chicago-author-date.csl
 website:
   title: "Urban Economics"
   description: "Study cities, housing markets, transportation, and local public policy through an economic lens"
-  site-url: "https://hhadah.github.io/urban-economics-class"
+  site-url: "https://hussainhadah-urban-econ.netlify.app/"
 
   draft-mode: unlinked
 

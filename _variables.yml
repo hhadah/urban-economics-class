@@ -3,31 +3,31 @@ author: Hussain Hadah
 instructor:
   name: Dr. Hussain Hadah
   name_no_title: Hussain Hadah
-  email: hussain.hadah@university.edu
-  url: "https://www.example.edu/~hhadah"
-  bluesky: "https://bsky.app/profile/hussain-hadah"
+  email: hussainhadah@gmail.com
+  url: "https://hussainhadah.com"
+  # bluesky: "https://bsky.app/profile/hussain-hadah"
   github: hhadah
   office: "TBD"
   contact_policy: >-
     E-mail is the best way to reach me. I will respond to course-related messages within 24–48 hours during the work week.
-  appointment_url: https://calendly.com/hussain-hadah/
+  appointment_url: https://hussainhadah.youcanbook.me/
 
 course:
-  number: "ECON 414"
+  number: "ECON XXXX"
   semester: "Spring 2026"
   days: "TBD"
   time: "TBD"
   location: "TBD"
   dates: "TBD"
   github: "https://github.com/hhadah/urban-economics-class"
-  url: "https://hhadah.github.io/urban-economics-class"
+  url: "https://hussainhadah-urban-econ.netlify.app/"
   copyright_year: "2026"
-  discord: "https://discord.gg/your-invite"
+  # discord: "https://discord.gg/your-invite"
 
 university:
-  name: Your University
-  url: "https://www.example.edu"
+  name: XXXXXX
+  url: "XXXXXX"
 
 school:
   name: Department of Economics
-  url: "https://www.example.edu/economics"
+  url: "XXXXX"
